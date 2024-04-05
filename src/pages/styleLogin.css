@@ -1,17 +1,19 @@
 body {
     background-image: url(../assets/login.png.webp);
     background-size: cover;
-    /* Copre l'intero contenitore mantenendo le proporzioni dell'immagine */
-    /* Centra l'immagine rispetto al contenitore */
     background-repeat: no-repeat;
-    /* Impedisce la ripetizione dell'immagine */
     display: flex;
     justify-content: center;
+    align-items: center;
+    /* Centra il contenuto verticalmente */
+    height: 100vh;
+    /* Imposta l'altezza del body al 100% del viewport */
 }
 
 .container-login {
-    height: 100%;
-
+    /* Aggiungi eventuali stili specifici al contenitore della form di login */
 }
 
-.container-form-login {}
+.container-form-login {
+    /* Aggiungi eventuali stili specifici al contenitore della form di login */
+}
