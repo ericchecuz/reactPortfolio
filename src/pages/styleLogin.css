@@ -9,6 +9,34 @@ body {
     /* Imposta l'altezza del body al 100% del viewport */
 }
 
+input {
+    height: 40px;
+    width: 280px;
+    border-radius: 0;
+    border-radius: 10px;
+    border-left: 0;
+    border-top: 0;
+    text-align: center;
+
+}
+
+.button-login {
+    width: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 32px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+
+}
+
+.container-button {
+    display: flex;
+    justify-content: center;
+}
+
 .container-login {
     /* Aggiungi eventuali stili specifici al contenitore della form di login */
 }
@@ -24,7 +52,8 @@ body {
     display: flex;
     width: 300px;
     flex-direction: column;
-    gap: 20px
+    gap: 35px;
+    margin-top: 130px;
 }
 
 .background-image {
@@ -99,4 +128,70 @@ body {
     to {
         opacity: 1;
     }
+}
+
+.form-group {
+    position: relative;
+    margin-top: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 18px;
+    background-color: #ffffffba;
+    border: none;
+    border-bottom: 3px black solid !important;
+    /* Opzionale: rimuove il bordo dell'input */
+    border-radius: 5px;
+    /* Arrotonda gli angoli dell'input */
+    /* Percorso della tua immagine sfocata */
+    color: black;
+    /* Colore del testo per migliorare la leggibilità */
+}
+
+.form-group label {
+    position: absolute;
+    top: -3px;
+    left: 10px;
+    font-size: 17px;
+    margin-top: 10px;
+    transition: 0.3s;
+    pointer-events: none;
+    color: #d27e49;
+}
+
+.form-group input:focus+label {
+    margin-top: -24px;
+    margin-left: 35%;
+    /* Sposta la label in alto */
+    font-size: 18px;
+    color: #000000;
+}
+
+
+.button-login {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 130px;
+    height: 40px;
+    color: white;
+    /* Testo bianco, modifica se necessario */
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    background-size: 200% auto;
+    background-image: linear-gradient(to right, rgb(171, 95, 64), rgb(255, 244, 160), rgb(122, 169, 192), rgb(235, 255, 255), rgb(171, 95, 64));
+    transition: 0.5s;
+    backdrop-filter: blur(5px);
+    color: black !important
+        /* Effetto sfocatura */
+}
+
+.button-login:hover {
+    background-position: right center;
+    /* Muove il gradiente al passaggio del mouse */
 }
