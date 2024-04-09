@@ -1,12 +1,11 @@
 body {
-    background-image: url(../assets/login.png.webp);
+    /* background-image: url(../assets/login.png.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     display: flex;
     justify-content: center;
     align-items: center;
     /* Centra il contenuto verticalmente */
-    height: 100vh;
     /* Imposta l'altezza del body al 100% del viewport */
 }
 
@@ -15,5 +14,89 @@ body {
 }
 
 .container-form-login {
-    /* Aggiungi eventuali stili specifici al contenitore della form di login */
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-login {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    gap: 20px
+}
+
+.background-image {
+    position: fixed;
+    /* o absolute, a seconda delle necessità */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/login.png.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes colorChange {
+
+
+    40% {
+        border-top-color: rgb(171, 95, 64);
+    }
+
+    60% {
+        border-top-color: rgb(255, 244, 160);
+    }
+
+    80% {
+        border-top-color: rgb(122, 169, 192);
+    }
+
+    100% {
+        border-top-color: rgb(235, 255, 255);
+    }
+}
+
+.loading-animation {
+    border: 40px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 1.5s linear infinite, colorChange 5s ease-in-out infinite;
+    position: absolute;
+    top: calc(58% + 5px);
+    left: calc(47% + 5px);
+    margin-top: -50px;
+    /* Metà dell'altezza */
+    margin-left: -50px;
+    /* Metà della larghezza */
+    z-index: 2;
+}
+
+.container-login.fade-in {
+    animation: fadeIn 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
