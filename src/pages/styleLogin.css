@@ -4,10 +4,16 @@ body {
     background-repeat: no-repeat; */
     display: flex;
     justify-content: center;
+    font-family: 'Roboto', sans-serif;
     align-items: center;
     /* Centra il contenuto verticalmente */
     /* Imposta l'altezza del body al 100% del viewport */
 }
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 
 input {
     height: 40px;
@@ -144,17 +150,13 @@ input {
     background-color: #ffffffba;
     border: none;
     border-bottom: 3px black solid !important;
-    /* Opzionale: rimuove il bordo dell'input */
     border-radius: 5px;
-    /* Arrotonda gli angoli dell'input */
-    /* Percorso della tua immagine sfocata */
     color: black;
-    /* Colore del testo per migliorare la leggibilità */
 }
 
 .form-group label {
     position: absolute;
-    top: -3px;
+    top: -1px;
     left: 10px;
     font-size: 17px;
     margin-top: 10px;
