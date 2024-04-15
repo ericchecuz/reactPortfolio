@@ -22,8 +22,8 @@ function HomePage() {
                 <div className='container-titles'>
                     <div className='container-title'>ERIC CHECUZ </div>
                     <div className='container-subtitles'>
-                    <div className='container-subtitle1'>Front-End</div>
-                        <div className='container-subtitle2'>Developer</div>
+                    <div className='container-subtitle1'><h2><span>Front-End</span>Developer</h2></div>
+                        
                         </div>
                 </div>
 
