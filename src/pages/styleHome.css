@@ -12,7 +12,7 @@
     background-repeat: no-repeat;
     height: 100vh;
     /* Assicura che il container occupi l'intera altezza della vista */
-    width: 100vw;
+
 }
 
 .container-logo {
@@ -122,6 +122,7 @@ img {
 .container-titles {
     display: flex;
     flex-direction: column;
+    width: 500px;
 }
 
 .container-subtitles {
@@ -152,6 +153,9 @@ img {
     background-image: url(../assets/logo.png);
     width: 170px;
     height: 170px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    height: 170px;
+    border-radius: 100px;
 }
 
 .subtitle4 {
@@ -171,10 +175,11 @@ img {
 .container-tag {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     flex-wrap: wrap;
     gap: 20px;
-    width: 500px;
+    row-gap: 20px;
+    width: 365px;
 }
 
 .tag {
@@ -192,4 +197,31 @@ img {
     font-family: "Roboto Mono", monospace;
     font-optical-sizing: auto;
     font-size: 0.8rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contacts {
+    width: 495px;
+    height: 100px;
+    border-radius: 25px;
+    background-color: #5a6d7999;
+    margin-top: 17rem;
+
+}
+
+.container-contacts {
+    position: absolute;
+    left: 35%;
+    z-index: 1;
+}
+
+.container-img2 {
+    background-image: url(../assets/img-1.webp);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    display: block;
+    height: 100vh;
+    width: 98.9vw;
+    z-index: 0;
 }

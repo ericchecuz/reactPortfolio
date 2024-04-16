@@ -3,7 +3,25 @@ import { auth } from '../firebase/firebaseConfig';
 import './styleHome.css';
 
 function HomePage() {
+    const [transform, setTransform] = useState('');
+
+  const handleMouseMove = (event) => {
+    const { clientX, clientY, currentTarget } = event;
+    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+    const centerX = left + width / 2;
+    const centerY = top + height / 2;
+    const deltaX = (clientX - centerX) * 1.5; // Sposta l'immagine del 10% della distanza dal centro
+    const deltaY = (clientY - centerY) * 1.5; // Sposta l'immagine del 10% della distanza dal centro
+
+    setTransform(`translate(${deltaX}px, ${deltaY}px)`);
+  };
+
+  const handleMouseLeave = () => {
+    setTransform(''); // Resetta la trasformazione quando il mouse lascia il contenitore
+    };
+    
     return (
+        <div>
         <div className="main-container">
             <header className='header'>
                 <div className='logo-title'>
@@ -33,13 +51,29 @@ function HomePage() {
                     <div className='tag'>Java</div>
                     <div className='tag'>Springboot</div>
                     <div className='tag'>Python</div>
-                    <div className='tag'>SQL</div>
+                        <div className='tag'>SQL</div>
+                        <div className='tag'>Figma</div>
+                    
                     </div>
                 </div>
 
-                <div className='container-img-top'> <img className='img-top'></img> </div>
+                <div 
+                    className="container-img-top" 
+                    onMouseMove={handleMouseMove} 
+                    onMouseLeave={handleMouseLeave}
+                    style={{ transform: transform, transition: 'transform 0.5s ease' }}>
+                    <img className='img-top'></img>
+                </div>
+            </div>
+            <div className='container-contacts'><div className='contacts'>
             </div>
             </div>
+        </div>
+            <div className='container-img2'></div>
+            </div>
+            
+            
+            
     )
  }
 
