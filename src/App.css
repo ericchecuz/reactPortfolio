@@ -57,3 +57,24 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* Modifica l'aspetto della scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  /* Larghezza della scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Colore dello sfondo della traccia */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Colore dello sfondo della maniglia */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Colore dello sfondo della maniglia quando si passa il mouse */
+}

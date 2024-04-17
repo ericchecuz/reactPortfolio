@@ -229,7 +229,7 @@ img {
     position: absolute;
     display: block;
     height: 100vh;
-    width: 98.9vw;
+    width: 99.7vw;
     z-index: 0;
     box-shadow: inset 0px 20px 10px 0px white, inset 0px -50px 30px -20px white;
 
@@ -326,4 +326,38 @@ img {
     width: 1.25px;
     background-color: #ffffff36;
     margin: 0 20px;
+}
+
+/* 
+SCROLLBAR */
+
+
+/* Modifica l'aspetto della scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    transition: 0.3s ease;
+    /* Larghezza della scrollbar */
+}
+
+::-webkit-scrollbar:hover {
+
+    width: 10px;
+    /* Larghezza della scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f100;
+    /* Colore dello sfondo della traccia */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 20px;
+    /* Colore dello sfondo della maniglia */
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Colore dello sfondo della maniglia quando si passa il mouse */
 }
