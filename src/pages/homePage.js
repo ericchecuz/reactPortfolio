@@ -64,9 +64,22 @@ function HomePage() {
                     style={{ transform: transform, transition: 'transform 0.5s ease' }}>
                     <img className='img-top'></img>
                 </div>
-            </div>
-            <div className='container-contacts'><div className='contacts'>
-            </div>
+                </div>
+                <div className='container-contacts'>
+                    <div className='contacts'>
+                        <div className='container-icons'>
+                        <div className='facebook'>
+                    </div>
+                     <div className='instagram'>
+                            </div>
+                            <div className='dividing-line'>
+                    </div>
+                     <div className='linkedin'>
+                    </div>
+                     <div className='telegram'>
+                    </div>
+                        </div>
+                        </div>
             </div>
         </div>
             <div className='container-img2'></div>

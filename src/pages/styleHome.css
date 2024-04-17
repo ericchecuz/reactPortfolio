@@ -8,6 +8,7 @@
 .main-container {
     background-image: url(../assets/home2.png);
     background-size: cover;
+    box-shadow: inset 0px -20px 10px 0px white;
     background-position: center center;
     background-repeat: no-repeat;
     height: 100vh;
@@ -201,18 +202,24 @@ img {
 }
 
 .contacts {
-    width: 495px;
+    width: 390px;
     height: 100px;
     border-radius: 25px;
-    background-color: #5a6d7999;
-    margin-top: 17rem;
-
+    background-color: #2a344652;
+    margin-top: 19rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
 }
 
 .container-contacts {
     position: absolute;
-    left: 35%;
+    left: 38%;
     z-index: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .container-img2 {
@@ -224,4 +231,99 @@ img {
     height: 100vh;
     width: 98.9vw;
     z-index: 0;
+    box-shadow: inset 0px 20px 10px 0px white, inset 0px -50px 30px -20px white;
+
+}
+
+.img-arrow {
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+    z-index: 0;
+    background-image: url(../assets/icons8-arrow-down.gif);
+}
+
+.container-arrow {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    z-index: 1;
+}
+
+.facebook {
+    background-image: url(../assets/icons8-facebook-80.png);
+    height: 80px;
+    /* background-origin: content-box; */
+    background-repeat: no-repeat;
+    width: 80px;
+    opacity: 0.8;
+    transition: 0.3s ease;
+}
+
+.facebook:hover {
+    cursor: pointer;
+    opacity: 1.5;
+}
+
+.instagram {
+    background-image: url(../assets/icons8-instagram-80.png);
+    height: 80px;
+    /* background-origin: content-box; */
+    background-repeat: no-repeat;
+    width: 80px;
+    opacity: 0.8;
+    transition: 0.3s ease;
+}
+
+.instagram:hover {
+    cursor: pointer;
+    opacity: 1.5;
+}
+
+.telegram {
+    background-image: url(../assets/icons8-telegram-logo-80.png);
+    height: 80px;
+    /* background-origin: content-box; */
+    background-repeat: no-repeat;
+    width: 80px;
+    scale: 0.8;
+    opacity: 0.8;
+    transition: 0.3s ease;
+}
+
+.telegram:hover {
+    cursor: pointer;
+    opacity: 1.5;
+}
+
+.linkedin {
+    background-image: url(../assets/icons8-linkedin-logo-80.png);
+    height: 80px;
+    /* background-origin: content-box; */
+    background-repeat: no-repeat;
+    width: 80px;
+    scale: 0.8;
+    transition: 0.3s ease;
+    opacity: 0.8;
+}
+
+.linkedin:hover {
+    cursor: pointer;
+    opacity: 1.5;
+}
+
+.container-icons {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    flex-direction: row;
+}
+
+.dividing-line {
+    height: 66px;
+    width: 1.25px;
+    background-color: #ffffff36;
+    margin: 0 20px;
 }
