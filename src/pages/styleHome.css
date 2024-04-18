@@ -118,6 +118,9 @@ img {
     -webkit-text-stroke: 1.4px black;
     /* Imposta lo stroke */
     font-size: 4.25rem;
+    font-family: "Gugi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .container-titles {
@@ -202,16 +205,15 @@ img {
 }
 
 .contacts {
-    width: 390px;
+    width: 385px;
     height: 100px;
     border-radius: 25px;
-    background-color: #2a344652;
-    margin-top: 19rem;
+    background-color: #2a34463b;
+    margin-top: 7rem;
     display: flex;
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    align-content: center;
 }
 
 .container-contacts {
@@ -256,7 +258,7 @@ img {
     /* background-origin: content-box; */
     background-repeat: no-repeat;
     width: 80px;
-    opacity: 0.8;
+    opacity: 0.6;
     transition: 0.3s ease;
 }
 
@@ -271,7 +273,7 @@ img {
     /* background-origin: content-box; */
     background-repeat: no-repeat;
     width: 80px;
-    opacity: 0.8;
+    opacity: 0.6;
     transition: 0.3s ease;
 }
 
@@ -287,7 +289,7 @@ img {
     background-repeat: no-repeat;
     width: 80px;
     scale: 0.8;
-    opacity: 0.8;
+    opacity: 0.6;
     transition: 0.3s ease;
 }
 
@@ -304,7 +306,7 @@ img {
     width: 80px;
     scale: 0.8;
     transition: 0.3s ease;
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 .linkedin:hover {
@@ -341,7 +343,7 @@ SCROLLBAR */
 
 ::-webkit-scrollbar:hover {
 
-    width: 10px;
+    width: 7px;
     /* Larghezza della scrollbar */
 }
 
@@ -360,4 +362,57 @@ SCROLLBAR */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
     /* Colore dello sfondo della maniglia quando si passa il mouse */
+}
+
+.arrow {
+    width: 30px;
+    height: 30px;
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    animation: bounceArrow 2s infinite;
+}
+
+@keyframes bounceArrow {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    40% {
+        transform: translateY(-30px) rotate(45deg);
+    }
+
+    60% {
+        transform: translateY(-15px) rotate(45deg);
+    }
+}
+
+.arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 11rem;
+
+}
+
+.text-project {
+    position: absolute;
+    justify-content: center;
+    margin-top: 18rem;
+    z-index: 1;
+    left: 40%;
+    color: white;
+    font-weight: 800;
+    font-size: 4.5rem;
+    -webkit-text-stroke: 1.4px black;
+    font-family: "Gugi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }

@@ -74,6 +74,9 @@ function HomePage() {
             <img className="img-top"></img>
           </div>
         </div>
+        <div className="arrow-container">
+          <div className="arrow"></div>
+        </div>
         <div className="container-contacts">
           <div className="contacts">
             <div className="container-icons">
@@ -85,6 +88,7 @@ function HomePage() {
             </div>
           </div>
         </div>
+        <div className="text-project">Projects</div>
       </div>
       <div className="container-img2"></div>
     </div>
