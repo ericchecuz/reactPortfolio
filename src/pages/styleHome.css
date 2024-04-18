@@ -5,6 +5,25 @@
     align-items: center;
 }
 
+h3 {
+    color: white;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 800;
+    font-style: normal;
+}
+
+p {
+    margin-top: 0px;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: white;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 0.9rem;
+}
+
 .main-container {
     background-image: url(../assets/home2.png);
     background-size: cover;
@@ -209,7 +228,7 @@ img {
     height: 100px;
     border-radius: 25px;
     background-color: #2a34463b;
-    margin-top: 7rem;
+    margin-top: 4rem;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -217,9 +236,6 @@ img {
 }
 
 .container-contacts {
-    position: absolute;
-    left: 38%;
-    z-index: 1;
     display: flex;
     justify-content: center;
 }
@@ -403,9 +419,10 @@ SCROLLBAR */
 }
 
 .text-project {
-    position: absolute;
+    /* position: absolute; */
     justify-content: center;
-    margin-top: 18rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
     z-index: 1;
     left: 40%;
     color: white;
@@ -415,4 +432,56 @@ SCROLLBAR */
     font-family: "Gugi", sans-serif;
     font-weight: 400;
     font-style: normal;
+    display: flex;
+}
+
+.section-projects {
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s ease-in-out, transform 0.5s ease-in-out;
+    width: 308px;
+    height: 472px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background-color: #123e48
+}
+
+.card.fade-in:hover {
+    cursor: pointer;
+
+    .img-cards {
+        cursor: pointer;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.img-cards {
+    width: 264px;
+    height: 309px;
+    margin-top: 1rem;
+    opacity: 0.7;
 }
