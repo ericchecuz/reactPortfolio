@@ -15,6 +15,7 @@ body {
 }
 
 
+
 input {
     height: 40px;
     width: 280px;
@@ -196,4 +197,24 @@ input {
 .button-login:hover {
     background-position: right center;
     /* Muove il gradiente al passaggio del mouse */
+}
+
+.container-tutorials {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+}
+
+.p-tutorial {
+    margin-top: 0px;
+    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    color: white;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 0.9rem;
+
 }

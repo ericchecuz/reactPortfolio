@@ -6,6 +6,8 @@ import card1 from "../assets/card1.png";
 import card3 from "../assets/cards2.png";
 import card2 from "../assets/cards3.png";
 import card4 from "../assets/cards4.png";
+import tutorial1 from "../assets/tutorialscard1.png";
+import tutorial2 from "../assets/tutorialscard2.png";
 
 const ProjectCards = ({ title, description, image }) => {
   const { ref, inView } = useInView({
@@ -27,7 +29,7 @@ const ProjectCards = ({ title, description, image }) => {
         <h3>Angular User Dashboard</h3>
         <p>
           Dashboard made in Angular 16 with implementation of FireBase
-          Database/Auth, to control the users , and more features.
+          Database/Auth, and more features.
         </p>
       </div>
       <div ref={ref} className={`card ${inView ? "fade-in" : "fade-out"}`}>
@@ -42,6 +44,60 @@ const ProjectCards = ({ title, description, image }) => {
         <img className="img-cards" src={card4} alt={title} />
         <h3>Coming soon..</h3>
         <p>{description}</p>
+      </div>
+    </>
+  );
+};
+
+const TutorialCard = ({ title, description, image }) => {
+  const { ref, inView } = useInView({
+    threshold: 0.5, // Trigger quando il 50% della card è visibile
+  });
+
+  return (
+    <>
+      <div
+        ref={ref}
+        className={`card-tutorial ${inView ? "fade-in" : "fade-out"}`}
+      >
+        <img className="img-tutorial" src={tutorial1} />
+        <div className="container-tag-tutorial">
+          <div className="tag">Angular</div>
+          <div className="tag">TypeScript</div>
+        </div>
+        <h3>Angular tutorial for beginners</h3>
+        <p className="p-tutorial">
+          Have you never used Angular first? This tutorial is the tutorial to
+          start from
+        </p>
+        <div className="difficulty-container">
+          <span className="difficulty-label">Difficulty:</span>
+          <div className="difficulty-bar">
+            <div className="difficulty-progress" style={{ width: "20%" }}></div>
+          </div>
+        </div>
+      </div>
+      <div
+        ref={ref}
+        className={`card-tutorial ${inView ? "fade-in" : "fade-out"}`}
+      >
+        <img className="img-tutorial" src={tutorial2} />
+        <div className="container-tag-tutorial">
+          <div className="tag">Angular</div>
+          <div className="tag">React</div>
+          <div className="tag">TypeScript</div>
+        </div>
+        <h3>FireBase tutorial for beginners</h3>
+        <p className="p-tutorial">
+          Have you never used FireBase for autentication first? This is the
+          simple tutorial to learn FireBase Database
+        </p>
+        <div className="difficulty-container">
+          <span className="difficulty-label">Difficulty:</span>
+          <div className="difficulty-bar">
+            <div className="difficulty-progress" style={{ width: "20%" }}></div>
+          </div>
+        </div>
       </div>
     </>
   );
@@ -167,6 +223,14 @@ function HomePage() {
             }}
           >
             <ProjectCards />
+          </div>
+        </div>
+        <div className="container-img3">
+          <div className="text-project">Tutorial</div>{" "}
+          <div className="container-tutorials">
+            <div className="cards-tutorials">
+              <TutorialCard />
+            </div>
           </div>
         </div>
       </div>

@@ -205,6 +205,18 @@ img {
     width: 365px;
 }
 
+.container-tag-tutorial {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    gap: 20px;
+    row-gap: 20px;
+    width: 365px;
+    margin-top: 1rem;
+}
+
 .tag {
     width: 108px;
     height: 32px;
@@ -219,7 +231,7 @@ img {
     font-style: normal;
     font-family: "Roboto Mono", monospace;
     font-optical-sizing: auto;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -228,7 +240,7 @@ img {
     height: 100px;
     border-radius: 25px;
     background-color: #2a34463b;
-    margin-top: 4rem;
+    margin-top: 1.8rem;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -246,10 +258,22 @@ img {
     background-position: center;
     position: absolute;
     display: block;
+    height: 105vh;
+    width: 99.7vw;
+    z-index: 0;
+    box-shadow: inset 0px 20px 10px 0px white, inset 0px -40px 30px -10px white;
+}
+
+.container-img3 {
+    background-image: url(../assets/home3.webp);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    display: block;
     height: 100vh;
     width: 99.7vw;
     z-index: 0;
-    box-shadow: inset 0px 20px 10px 0px white, inset 0px -50px 30px -20px white;
+    box-shadow: inset 0px 10px 10px 0px white, inset 0px 0px 0px 0px white;
 
 }
 
@@ -359,7 +383,7 @@ SCROLLBAR */
 
 ::-webkit-scrollbar:hover {
 
-    width: 7px;
+    width: 5px;
     /* Larghezza della scrollbar */
 }
 
@@ -383,7 +407,7 @@ SCROLLBAR */
 .arrow {
     width: 30px;
     height: 30px;
-    border: solid black;
+    border: solid #123e48;
     border-width: 0 4px 4px 0;
     display: inline-block;
     padding: 3px;
@@ -445,7 +469,22 @@ SCROLLBAR */
     transform: translateY(20px);
     transition: opacity 1.2s ease-in-out, transform 0.5s ease-in-out;
     width: 308px;
-    height: 472px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background-color: #123e48
+}
+
+.card-tutorial {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s ease-in-out, transform 0.5s ease-in-out;
+    width: 564px;
+    height: 468px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -459,6 +498,16 @@ SCROLLBAR */
     cursor: pointer;
 
     .img-cards {
+        cursor: pointer;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 1;
+    }
+}
+
+.card-tutorial.fade-in:hover {
+    cursor: pointer;
+
+    .img-tutorial {
         cursor: pointer;
         transition: opacity 0.3s ease-in-out;
         opacity: 1;
@@ -481,7 +530,52 @@ SCROLLBAR */
 
 .img-cards {
     width: 264px;
-    height: 309px;
+    height: 272px;
     margin-top: 1rem;
     opacity: 0.7;
+}
+
+.img-tutorial {
+    width: 385px;
+    height: 192px;
+    margin-top: 1rem;
+    opacity: 0.7;
+}
+
+.cards-tutorials {
+    display: flex;
+    gap: 5rem;
+    flex-direction: row;
+}
+
+.difficulty-container {
+    width: 250px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+    align-items: center;
+
+}
+
+.difficulty-label {
+    color: white;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 0.9rem;
+}
+
+.difficulty-bar {
+    width: 150px;
+    background-color: #ffffffa8;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.difficulty-progress {
+    height: 20px;
+    background-color: #008000;
+    /* Verde */
+    border-radius: 5px;
 }
