@@ -235,7 +235,17 @@ function HomePage() {
         </div>
         <div className="container-img4">
           <div className="container-img-sub"></div>
+          <div className="container-subscribe">
+            <p className="text-sub">
+              Keep updated about latest content videos, articles, tips and news
+            </p>
+            <div className="container-inupt">
+              <input placeholder="Your Email Address"></input>
+              <button>SUBSCRIBE</button>
+            </div>
+          </div>
         </div>
+        <footer>footer</footer>
       </div>
     </div>
   );

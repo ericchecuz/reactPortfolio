@@ -279,6 +279,11 @@ img {
 
 footer {
     position: relative;
+    top: 100%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin-top: 2rem;
 }
 
 .container-img4 {
@@ -291,7 +296,7 @@ footer {
     height: 100vh;
     width: 99.7vw;
     z-index: 0;
-    box-shadow: inset 0px 10px 10px 0px white, inset 0px 0px 0px 0px white;
+    box-shadow: inset 0px 10px 10px 0px white, inset 0px -10px 10px 0px white;
 
 }
 
@@ -608,4 +613,62 @@ SCROLLBAR */
     left: 41%;
     transform: scale(0.7);
     top: 15%;
+}
+
+.container-subscribe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-sub {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+    color: #0b202b;
+}
+
+.container-inupt {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+input {
+    width: 296px;
+    height: 48px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-width: 0px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.9rem;
+    text-align: left;
+    padding-inline: 25px;
+}
+
+input:focus-visible {
+    border-color: red !important;
+}
+
+button {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    padding-block: 0px;
+    padding-inline: 6px;
+    border-width: 0px;
+    height: 50px;
+    width: 111px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.9rem;
 }
