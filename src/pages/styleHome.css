@@ -27,7 +27,7 @@ p {
 .main-container {
     background-image: url(../assets/home2.png);
     background-size: cover;
-    box-shadow: inset 0px -20px 10px 0px white;
+    box-shadow: inset 0px -10px 10px 0px white;
     background-position: center center;
     background-repeat: no-repeat;
     height: 100vh;
@@ -273,6 +273,24 @@ img {
     height: 100vh;
     width: 99.7vw;
     z-index: 0;
+    box-shadow: inset 0px 10px 10px 0px white, inset 0px -10px 10px 0px white;
+
+}
+
+footer {
+    position: relative;
+}
+
+.container-img4 {
+    background-image: url(../assets/home4.webp);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: block;
+    top: 100%;
+    height: 100vh;
+    width: 99.7vw;
+    z-index: 0;
     box-shadow: inset 0px 10px 10px 0px white, inset 0px 0px 0px 0px white;
 
 }
@@ -457,7 +475,9 @@ SCROLLBAR */
     font-weight: 400;
     font-style: normal;
     display: flex;
+
 }
+
 
 .section-projects {
     position: relative;
@@ -578,4 +598,14 @@ SCROLLBAR */
     background-color: #008000;
     /* Verde */
     border-radius: 5px;
+}
+
+.container-img-sub {
+    width: 290px;
+    background-image: url(../assets/mail2.png);
+    height: 471px;
+    position: relative;
+    left: 41%;
+    transform: scale(0.7);
+    top: 15%;
 }
