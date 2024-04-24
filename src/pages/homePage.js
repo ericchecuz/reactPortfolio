@@ -103,6 +103,47 @@ const TutorialCard = ({ title, description, image }) => {
   );
 };
 
+function SubscriptionForm() {
+  const [email, setEmail] = useState("");
+  const [isAgreed, setIsAgreed] = useState(false);
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleAgreementChange = (event) => {
+    setIsAgreed(event.target.checked);
+  };
+
+  return (
+    <div className="subscription-container">
+      <div className="container-input">
+        <input
+          type="email"
+          placeholder="Your Email Address"
+          value={email}
+          onChange={handleEmailChange}
+        />
+        <button
+          style={{ backgroundColor: isAgreed ? "#ff6547" : "#ccc" }}
+          disabled={!isAgreed}
+        >
+          SUBSCRIBE
+        </button>
+      </div>
+      <div className="custom-checkbox">
+        <input
+          type="checkbox"
+          id="agree"
+          checked={isAgreed}
+          onChange={handleAgreementChange}
+        />
+        <label htmlFor="agree">I have read the policy</label>
+      </div>
+    </div>
+  );
+}
+
 function HomePage() {
   const [transform, setTransform] = useState("");
 
@@ -239,13 +280,10 @@ function HomePage() {
             <p className="text-sub">
               Keep updated about latest content videos, articles, tips and news
             </p>
-            <div className="container-inupt">
-              <input placeholder="Your Email Address"></input>
-              <button>SUBSCRIBE</button>
-            </div>
+            <SubscriptionForm />
           </div>
+          <footer>footer</footer>
         </div>
-        <footer>footer</footer>
       </div>
     </div>
   );
