@@ -6,19 +6,43 @@
     margin-top: 2rem;
 }
 
-.text-footer {
+.p-footer {
+    margin-top: 0px;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
     color: white;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+    text-align: left;
+    transition: color 0.5s ease;
+}
+
+.p-footer:hover {
+
+    color: #ff6547;
+    cursor: pointer;
+    /* Imposta il colore iniziale, può essere il colore di default o uno specifico */
+    transition: color 0.5s ease;
+}
+
+.text-footer {
+    color: #868a94;
     font-family: "Roboto Mono", monospace;
     font-weight: 800;
     font-style: normal;
+    text-align: left;
     margin-bottom: 0.8rem;
 }
 
 .container-prod-sec {
     display: flex;
     flex-direction: column;
-    text-align: center;
-
+    text-align: left;
+    gap: 2rem;
 }
 
 .container-section {
@@ -31,4 +55,22 @@
 
 .container-about {
     text-align: center;
+}
+
+.container-footer-img {
+    background-image: url(../../assets/footer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 156px;
+    height: 191px;
+    scale: 0.9;
+    margin-bottom: 0.4rem;
+    margin-left: 6rem;
+
+}
+
+.container-footer-image {
+    display: flex;
+    flex-direction: column;
+
 }
