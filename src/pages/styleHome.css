@@ -12,6 +12,11 @@ h3 {
     font-style: normal;
 }
 
+h2 {
+    font-family: "Roboto Mono", monospace;
+
+}
+
 p {
     margin-top: 0px;
     text-align: center;
@@ -749,4 +754,12 @@ input[type="checkbox" i] {
     /* Colore di sfondo quando è selezionato */
     border-color: #000000;
     /* Colore del bordo quando è selezionato */
+}
+
+footer {
+    position: relative;
+    height: 37vh;
+    width: 99.7vw;
+    box-shadow: inset 0px 10px 10px 0px white, inset 0px -10px 10px 0px white;
+    background: linear-gradient(to bottom, #011b22 15%, #023948 35%, #03576e 98%, #ffffff 100%);
 }

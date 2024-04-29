@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 7rem;
+    margin-top: 2rem;
+}
+
+.text-footer {
+    color: white;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 800;
+    font-style: normal;
+    margin-bottom: 0.8rem;
+}
+
+.container-prod-sec {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.container-section {
+    text-align: center;
+}
+
+.container-community {
+    text-align: center;
+}
+
+.container-about {
+    text-align: center;
+}

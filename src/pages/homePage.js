@@ -8,6 +8,7 @@ import card2 from "../assets/cards3.png";
 import card4 from "../assets/cards4.png";
 import tutorial1 from "../assets/tutorialscard1.png";
 import tutorial2 from "../assets/tutorialscard2.png";
+import Footer from "../components/footer/Footer";
 
 const ProjectCards = ({ title, description, image }) => {
   const { ref, inView } = useInView({
@@ -282,7 +283,7 @@ function HomePage() {
             </p>
             <SubscriptionForm />
           </div>
-          <footer>footer</footer>
+          <Footer />
         </div>
       </div>
     </div>
