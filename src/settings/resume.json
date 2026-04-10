@@ -1,0 +1,155 @@
+{
+  "basics": {
+    "name": "Eric Checuz",
+    "label": "Creative Developer",
+    "email": "eric96info@gmail.com",
+    "phone": "",
+    "picture": "profile.png",
+    "x_title": "Hello, I'm",
+    "job1": "Creative",
+    "job2": "Developer",
+    "description": "I build polished web experiences with a focus on creativity, responsive design, and modern front-end tools.",
+    "summary": "Creative developer with strong skills in UI/UX, web technologies, and interactive design.",
+    "keywords": "ericdevice,creative developer,web development,react,angular,html,css,javascript,typescript,java,python,springboot",
+    "url": "https://ericdevice.dev",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "",
+      "country": "",
+      "countryCode": "",
+      "region": ""
+    },
+    "profiles": [
+      {
+        "network": "Email",
+        "username": "eric96info@gmail.com",
+        "url": "mailto:eric96info@gmail.com",
+        "x_icon": "fas fa-envelope"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "EricDevice",
+        "url": "https://www.linkedin.com",
+        "x_icon": "fab fa-linkedin-in"
+      },
+      {
+        "network": "Instagram",
+        "username": "@EricDevice",
+        "url": "https://www.instagram.com",
+        "x_icon": "fab fa-instagram"
+      },
+      {
+        "network": "Facebook",
+        "username": "EricDevice",
+        "url": "https://www.facebook.com",
+        "x_icon": "fab fa-facebook-square"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "EricDevice",
+      "position": "Freelance Developer",
+      "website": "https://ericdevice.dev",
+      "startDate": "2023-01-01",
+      "endDate": "Present",
+      "summary": "Building custom web experiences and portfolio projects with modern front-end technologies.",
+      "highlights": [
+        "Created responsive portfolio layouts",
+        "Designed UI/UX-driven interfaces",
+        "Delivered interactive web projects for personal branding"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Community Projects",
+      "position": "Volunteer Developer",
+      "website": "https://ericdevice.dev",
+      "startDate": "2023-01-01",
+      "endDate": "Present",
+      "summary": "Contributed to open-source and community web initiatives.",
+      "highlights": [
+        "Shared design and code improvements",
+        "Helped launch portfolio showcases"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Generation Italy",
+      "area": "Web Development",
+      "studyType": "Certification Program",
+      "startDate": "2023-01-01",
+      "endDate": "2023-12-01",
+      "gpa": "",
+      "courses": ["Web Development", "Front-end Frameworks", "UI/UX"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Generation Italy Certification",
+      "date": "2023-12-01",
+      "awarder": "Generation Italy",
+      "summary": "Completed a full-stack development program with a focus on modern web technologies."
+    },
+    {
+      "title": "Python Certification",
+      "date": "2024-01-01",
+      "awarder": "Online Course",
+      "summary": "Completed a practical certification in Python programming."
+    }
+  ],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Frontend Development",
+      "level": "Advanced",
+      "keywords": [
+        "HTML5",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Angular"
+      ]
+    },
+    {
+      "name": "Backend & Tools",
+      "level": "Intermediate",
+      "keywords": ["Java", "SpringBoot", "Python", "SQL"]
+    },
+    {
+      "name": "Design & 3D",
+      "level": "Intermediate",
+      "keywords": ["Blender", "UI/UX", "Design Systems"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Italian",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Design",
+      "keywords": ["UI", "UX", "Branding"]
+    },
+    {
+      "name": "Development",
+      "keywords": ["Web", "Interactive Projects", "Creative Code"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Available on request",
+      "reference": "Contact for professional references."
+    }
+  ]
+}
