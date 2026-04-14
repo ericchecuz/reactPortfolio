@@ -46,8 +46,8 @@ export const Home = () => {
         <Resume />
       </div>
       <SideNavbar />
-      <Works />
       <About />
+      <Works />
       <Contact />
     </>
   );

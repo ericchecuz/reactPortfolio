@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useRef } from "react";
-import { Container, Typography, TextField, Button } from "@material-ui/core";
+import { Container, Typography, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { TextDecrypt } from "../content/TextDecrypt";
 import Resume from '../../settings/resume.json';
@@ -60,7 +60,12 @@ export const Contact = () => {
       <section id="contact">
         <Container component="main" className={classes.main} maxWidth="md">
           <div className="contact">
-            <div className="_form_wrapper">
+            <div>
+              <h1 className="contact_msg">
+                <TextDecrypt text={greetings}/>
+              </h1>
+            </div>
+            <div className="_form_wrapper ui-surface">
               <form ref={form} onSubmit={sendEmail} className={classes.form}>
                 <TextField
                   id="outlined-name-input"
@@ -91,17 +96,11 @@ export const Contact = () => {
                   name="message"
                   className={classes.formfield}
                 />
-                <button type="submit" value="Send" className="submit-btn">
-                <i className="fas fa-terminal"></i>
-                  <Typography component='span'> Send Message</Typography>
+                <button type="submit" value="Send" className="submit-btn ui-button ui-button--primary">
+                  <i className="fas fa-terminal" />
+                  <span>Send message</span>
                 </button>
               </form>
-            </div>
-            <div>
-              <h1 className="contact_msg">
-                <TextDecrypt text={greetings}/>
-              </h1>
-              <p className="contact_email">Reach me at {contactEmail}</p>
             </div>
           </div>
         </Container>

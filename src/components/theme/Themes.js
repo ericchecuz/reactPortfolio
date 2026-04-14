@@ -1,24 +1,43 @@
 import { createTheme, responsiveFontSizes } from "@material-ui/core";
 import Settings from "../../settings/settings.json";
 
-export const primary = `${Settings.colors.primary}`;
-export const secondary = `${Settings.colors.secondary}`;
-export const accent = `${Settings.colors.accent}`;
 export const black = `${Settings.colors.black}`;
 export const white = `${Settings.colors.white}`;
+
+const LightPalette = {
+  primary: "#4f7cff",
+  secondary: "#46526c",
+  accent: "#4f7cff",
+};
+
+const DarkPalette = {
+  primary: "#7ca3ff",
+  secondary: "#c2cdf0",
+  accent: "#7ca3ff",
+};
+
+const CustomPalette = {
+  primary: "#2f7a6d",
+  secondary: "#425148",
+  accent: "#2f7a6d",
+};
+
+export const primary = LightPalette.primary;
+export const secondary = LightPalette.secondary;
+export const accent = LightPalette.accent;
 
 export const LightTheme = responsiveFontSizes(
   createTheme({
     palette: {
       type: "light",
       primary: {
-        main: primary,
+        main: LightPalette.primary,
       },
       secondary: {
-        main: secondary,
+        main: LightPalette.secondary,
       },
       accent: {
-        main: accent,
+        main: LightPalette.accent,
       },
       background: {
         default: white,
@@ -29,7 +48,7 @@ export const LightTheme = responsiveFontSizes(
       },
       text: {
         primary: black,
-        secondary: secondary,
+        secondary: LightPalette.secondary,
       },
     },
     typography: {
@@ -67,7 +86,7 @@ export const LightTheme = responsiveFontSizes(
           boxShadow:
             "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
           "&:hover": {
-            backgroundColor: primary,
+            backgroundColor: LightPalette.primary,
           },
           transition: "all 0.5s ease",
         },
@@ -83,7 +102,7 @@ export const LightTheme = responsiveFontSizes(
           backgroundColor: "transparent",
           "&:hover": {
             color: black,
-            backgroundColor: accent,
+            backgroundColor: LightPalette.accent,
           },
           transition: "all 0.5s ease !important",
         },
@@ -94,7 +113,7 @@ export const LightTheme = responsiveFontSizes(
           backgroundColor: "transparent",
           "&:hover": {
             color: white,
-            backgroundColor: accent,
+            backgroundColor: LightPalette.accent,
           },
           transition: "all 0.5s ease",
           margin: "0px",
@@ -104,7 +123,7 @@ export const LightTheme = responsiveFontSizes(
       MuiTooltip: {
         tooltip: {
           fontFamily: "Roboto Mono, monospace",
-          backgroundColor: accent,
+          backgroundColor: LightPalette.accent,
           color: black,
           fontSize: 12,
         },
@@ -118,13 +137,13 @@ export const DarkTheme = responsiveFontSizes(
     palette: {
       type: "dark",
       primary: {
-        main: primary,
+        main: DarkPalette.primary,
       },
       secondary: {
-        main: secondary,
+        main: DarkPalette.secondary,
       },
       accent: {
-        main: accent,
+        main: DarkPalette.accent,
       },
       background: {
         default: black,
@@ -135,7 +154,7 @@ export const DarkTheme = responsiveFontSizes(
       },
       text: {
         primary: white,
-        secondary: secondary,
+        secondary: DarkPalette.secondary,
       },
     },
     typography: {
@@ -173,7 +192,7 @@ export const DarkTheme = responsiveFontSizes(
           boxShadow:
             "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
           "&:hover": {
-            backgroundColor: primary,
+            backgroundColor: DarkPalette.primary,
           },
           transition: "all 0.5s ease",
         },
@@ -189,7 +208,7 @@ export const DarkTheme = responsiveFontSizes(
           backgroundColor: "transparent",
           "&:hover": {
             color: white,
-            backgroundColor: accent,
+            backgroundColor: DarkPalette.accent,
           },
           transition: "all 0.5s ease !important",
         },
@@ -200,7 +219,7 @@ export const DarkTheme = responsiveFontSizes(
           backgroundColor: "transparent",
           "&:hover": {
             color: white,
-            backgroundColor: accent,
+            backgroundColor: DarkPalette.accent,
           },
           transition: "all 0.5s ease",
           margin: "0px",
@@ -210,7 +229,7 @@ export const DarkTheme = responsiveFontSizes(
       MuiTooltip: {
         tooltip: {
           fontFamily: "Roboto Mono, monospace",
-          backgroundColor: accent,
+          backgroundColor: DarkPalette.accent,
           color: white,
           fontSize: 12,
         },
@@ -224,13 +243,13 @@ export const CustomTheme = responsiveFontSizes(
     palette: {
       type: "light",
       primary: {
-        main: primary,
+        main: CustomPalette.primary,
       },
       secondary: {
-        main: secondary,
+        main: CustomPalette.secondary,
       },
       accent: {
-        main: accent,
+        main: CustomPalette.accent,
       },
       background: {
         default: white,
@@ -241,7 +260,7 @@ export const CustomTheme = responsiveFontSizes(
       },
       text: {
         primary: black,
-        secondary: secondary,
+        secondary: CustomPalette.secondary,
       },
     },
     typography: {
@@ -279,7 +298,7 @@ export const CustomTheme = responsiveFontSizes(
           boxShadow:
             "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
           "&:hover": {
-            backgroundColor: accent,
+            backgroundColor: CustomPalette.accent,
           },
           transition: "all 0.5s ease",
         },
@@ -295,7 +314,7 @@ export const CustomTheme = responsiveFontSizes(
           backgroundColor: "transparent",
           "&:hover": {
             color: black,
-            backgroundColor: accent,
+            backgroundColor: CustomPalette.accent,
           },
           transition: "all 0.5s ease !important",
         },
@@ -306,7 +325,7 @@ export const CustomTheme = responsiveFontSizes(
           backgroundColor: "transparent",
           "&:hover": {
             color: white,
-            backgroundColor: accent,
+            backgroundColor: CustomPalette.accent,
           },
           transition: "all 0.5s ease",
           margin: "0px",
@@ -316,7 +335,7 @@ export const CustomTheme = responsiveFontSizes(
       MuiTooltip: {
         tooltip: {
           fontFamily: "Roboto Mono, monospace",
-          backgroundColor: accent,
+          backgroundColor: CustomPalette.accent,
           color: black,
           fontSize: 12,
         },

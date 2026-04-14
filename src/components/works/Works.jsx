@@ -1,18 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { useState } from "react";
-import { Container } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { TextDecrypt } from "../content/TextDecrypt";
 
 import './Works.css';
-
-// Import ../../assets/recentprojects/
-import Portfolio from '../../assets/recentprojects/react-portfolio.png';
-import Veritru from '../../assets/recentprojects/veritru.png';
-import Lofo from '../../assets/recentprojects/lofo.png';
-import Startup from '../../assets/recentprojects/startup.png';
-import Lacalle from '../../assets/recentprojects/lacalle.png';
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -20,71 +12,92 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '3em',
     marginBottom: "auto",
   },
+  sectionTitle: {
+    marginBottom: "1.5em",
+    fontSize: "1.5rem",
+    textAlign: "center",
+  },
 }));
 
 export const Works = () => {
   const classes = useStyles();
-  const [projects, setProjects] = useState([
+  const projects = [
     { 
       id: 1,
-      title: 'React Portfolio', 
-      description: `Designed and developed a ReactJS portfolio 
-      with fancy 3D animations using Three.js for 
-      the background element.`,
-      alter: 'React Portfolio',
-      image: `${Portfolio}`,
+      title: 'YSBR.it', 
+      description: `A modern web platform built with React and Node.js featuring 
+      interactive user interfaces, responsive design, and seamless user experience. 
+      Focused on delivering a polished digital product with attention to performance and accessibility.`,
+      website: 'https://ysbr.it',
+      tech: ['React', 'Node.js', 'MongoDB', 'Express'],
     },
     { 
       id: 2,
-      title: 'VeriTru Project', 
-      description: `An advocacy project website built using
-      MEAN stack with fact-checking tool to promote actions against
-      fake news.`,
-      alter: 'VeriTru Project',
-      image: `${Veritru}`,
+      title: 'Agriturismo da Simone', 
+      description: `A complete website for an agriturismo business featuring 
+      room bookings, photo galleries, event information, and local product showcase. 
+      Built to highlight the rustic charm and hospitality of the farm stay experience.`,
+      website: 'https://agriturismodasimone.it',
+      tech: ['React', 'Firebase', 'Material-UI'],
     },
-    { 
-      id: 3,
-      title: 'LoFo Project', 
-      description: `Logistics and Forwarding website built using
-      ReactJS to design and develop its front-end.`,
-      alter: 'LoFo Project',
-      image: `${Lofo}`,
-    },
-    { 
-      id: 4,
-      title: 'Startup Project', 
-      description: `A website portfolio project for the Startup Dev Team
-      built using MEVN stack to demonstrate the CRUD capabilities of the tech stack.`,
-      alter: 'Startup Project',
-      image: `${Startup}`,
-    },
-    { 
-      id: 5,
-      title: 'LaCalle Cafe', 
-      description: `A website project for the La Calle Cafe business
-      built using Wordpress and PHP with integrated SEO tools to help
-      the business ramp up its prospects and lead generation.`,
-      alter: 'Startup Project',
-      image: `${Lacalle}`,
-    },
-  ]);
+  ];
 
   return (
     <section id="works">
       <Container component="main" className={classes.main} maxWidth="md">
+        <div className="works-header">
+          <Typography component='h3' variant="h5" className={classes.sectionTitle}>
+            <TextDecrypt text="Projects" />
+          </Typography>
+        </div>
         {projects.map((project) => (
           <div className="project" key={ project.id }>
             <div className="__img_wrapper">
-              <img src={ project.image } alt={ project.alter }/>
+              <div className="works-hero ui-surface">
+                <iframe
+                  title={`${project.title} preview`}
+                  src={project.website}
+                  loading="lazy"
+                  className="works-site-preview"
+                />
+                <a
+                  href={project.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="works-hero__url"
+                >
+                  {project.website}
+                </a>
+              </div>
             </div>
-            <div className="__content_wrapper">
-              <h3 className="title">
-                <TextDecrypt text={ project.id + '. ' + project.title } />
-              </h3>
-              <p className="description">
-                { project.description }
-              </p>
+            <div className="__content_wrapper ui-surface">
+              <div className="works-content-main">
+                <h3 className="title works-title-row">
+                  <i className="fas fa-globe works-content-icon" />
+                  <TextDecrypt text={ project.id + '. ' + project.title } />
+                </h3>
+                <p className="description">
+                  { project.description }
+                </p>
+                <div className="works-tech">
+                  {project.tech.map((t, i) => (
+                    <span key={i} className="ui-pill">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="works-cta">
+                <a
+                  href={project.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ui-button ui-button--outline"
+                >
+                  <i className="fas fa-external-link-alt" />
+                  <span>Visit website</span>
+                </a>
+              </div>
             </div>
           </div>
         ))}

@@ -7,6 +7,7 @@ import { Logo } from "./Logo";
 const useStyles = makeStyles((theme) => ({
   svg: {
     position: "fixed",
+    zIndex: 100,
     width: "50px",
     height: "50px",
     top: theme.spacing(6),

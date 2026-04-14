@@ -5,6 +5,21 @@ import { MuiThemeProvider } from "@material-ui/core/styles";
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
+    const hexToRgba = (hex, alpha) => {
+        if (!hex || typeof hex !== "string") return `rgba(0,0,0,${alpha})`;
+        const h = hex.replace("#", "").trim();
+        const isShort = h.length === 3;
+        const isLong = h.length === 6;
+        if (!isShort && !isLong) return `rgba(0,0,0,${alpha})`;
+
+        const full = isShort ? h.split("").map((c) => c + c).join("") : h;
+        const r = parseInt(full.slice(0, 2), 16);
+        const g = parseInt(full.slice(2, 4), 16);
+        const b = parseInt(full.slice(4, 6), 16);
+        if (Number.isNaN(r) || Number.isNaN(g) || Number.isNaN(b)) return `rgba(0,0,0,${alpha})`;
+        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    };
+
     const getInitialMode = () => {
         if (typeof localStorage === "undefined") return "dark";
 
@@ -90,6 +105,13 @@ export const ThemeProvider = ({ children }) => {
             selectedTheme.palette.primary.main;
         const secondary =
             selectedTheme.palette.text?.secondary || selectedTheme.palette.secondary?.main || text;
+        const primary = selectedTheme.palette.primary?.main;
+        const accent = selectedTheme.palette.accent?.main || selectedTheme.palette.secondary?.main || primary;
+        const themeType = selectedTheme.palette.type || "light";
+        const border = themeType === "dark" ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.12)";
+        const borderStrong = themeType === "dark" ? "rgba(255,255,255,0.18)" : "rgba(0,0,0,0.18)";
+        const aboutText =
+            theme === "dark" ? secondary : theme === "custom" ? "#1f342d" : "#1f2636";
 
         document.body.style.backgroundColor = "transparent";
         document.body.style.color = text;
@@ -98,7 +120,16 @@ export const ThemeProvider = ({ children }) => {
         document.documentElement.style.setProperty("--bg-paper", paper);
         document.documentElement.style.setProperty("--text-primary", text);
         document.documentElement.style.setProperty("--text-secondary", secondary);
-    }, [selectedTheme]);
+        if (primary) document.documentElement.style.setProperty("--primary", primary);
+        if (selectedTheme.palette.secondary?.main)
+            document.documentElement.style.setProperty("--secondary", selectedTheme.palette.secondary.main);
+        if (accent) document.documentElement.style.setProperty("--accent", accent);
+        document.documentElement.style.setProperty("--border-subtle", border);
+        document.documentElement.style.setProperty("--border-strong", borderStrong);
+        document.documentElement.style.setProperty("--accent-soft", hexToRgba(accent, themeType === "dark" ? 0.18 : 0.14));
+        document.documentElement.style.setProperty("--primary-soft", hexToRgba(primary, themeType === "dark" ? 0.18 : 0.14));
+        document.documentElement.style.setProperty("--about-text", aboutText);
+    }, [selectedTheme, theme]);
 
     return (
         <ThemeContext.Provider

@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Link } from '@material-ui/core';
 import { TextDecrypt } from '../content/TextDecrypt';
-import ResumePDF from './../../assets/Tan_Mark_Resume.pdf';
 import {
   ResumeIcon
 } from '../content/ResumeButton';
@@ -10,6 +9,7 @@ import {
 const useStyles = makeStyles((theme) => ({
   footerText: {
     position: 'fixed',
+    zIndex: 100,
     bottom: theme.spacing(6),
     left: theme.spacing(6),
     '&:hover': {
@@ -30,7 +30,7 @@ export const Resume = () => {
     <Link
       color='inherit'
       underline='none'
-      href= {`${ResumePDF}`}
+      // href= {`${ResumePDF}`}
       target='_blank'
       rel='noopener noreferrer'
       className={classes.footerText}

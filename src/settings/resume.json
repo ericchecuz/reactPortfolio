@@ -8,9 +8,9 @@
     "x_title": "Hello, I'm",
     "job1": "Creative",
     "job2": "Developer",
-    "description": "I build polished web experiences with a focus on creativity, responsive design, and modern front-end tools.",
-    "summary": "Creative developer with strong skills in UI/UX, web technologies, and interactive design.",
-    "keywords": "ericdevice,creative developer,web development,react,angular,html,css,javascript,typescript,java,python,springboot",
+    "description": "I build polished web experiences with a focus on creativity, responsive design, and modern front-end tools. Lately I work with AI coding workflows using GitHub Copilot, Claude models and custom agent orchestration.",
+    "summary": "Creative developer with strong skills in UI/UX, web technologies, interactive design and AI-assisted development workflows.",
+    "keywords": "ericdevice,creative developer,web development,react,angular,html,css,javascript,typescript,java,python,springboot,copilot,claude,ai-agents,robotics,raspberry-pi,3d-printing",
     "url": "https://ericdevice.dev",
     "location": {
       "address": "",
@@ -30,35 +30,45 @@
       {
         "network": "LinkedIn",
         "username": "EricDevice",
-        "url": "https://www.linkedin.com",
+        "url": "https://www.linkedin.com/in/eric-checuz-582397264/",
         "x_icon": "fab fa-linkedin-in"
       },
       {
-        "network": "Instagram",
-        "username": "@EricDevice",
-        "url": "https://www.instagram.com",
-        "x_icon": "fab fa-instagram"
-      },
-      {
-        "network": "Facebook",
-        "username": "EricDevice",
-        "url": "https://www.facebook.com",
-        "x_icon": "fab fa-facebook-square"
+        "network": "GitHub",
+        "username": "ericchecuz",
+        "url": "https://github.com/ericchecuz",
+        "x_icon": "fab fa-github"
       }
     ]
   },
   "work": [
     {
-      "company": "EricDevice",
-      "position": "Freelance Developer",
+      "company": "Banking Enterprise Projects",
+      "position": "Angular Developer",
       "website": "https://ericdevice.dev",
-      "startDate": "2023-01-01",
+      "startDate": "2022-01-01",
       "endDate": "Present",
-      "summary": "Building custom web experiences and portfolio projects with modern front-end technologies.",
+      "summary": "3+ years of experience in banking-domain projects as Angular Developer, with additional UI/UX and design system work.",
       "highlights": [
-        "Created responsive portfolio layouts",
-        "Designed UI/UX-driven interfaces",
-        "Delivered interactive web projects for personal branding"
+        "Built and maintained Angular applications in the banking domain.",
+        "Created UI/UX flows and design systems in Figma.",
+        "Worked with Storybook in Angular projects for component documentation.",
+        "Explored and maintained features across React, Vue.js, AngularJS, JSP and JSF stacks.",
+        "Organized AI coding agents and daily workflows with GitHub Copilot and Claude models."
+      ],
+      "skills": [
+        "Angular",
+        "Design System",
+        "Figma",
+        "Storybook",
+        "GitHub Copilot",
+        "Claude Models",
+        "Agent Orchestration",
+        "React",
+        "Vue.js",
+        "AngularJS",
+        "JSP",
+        "JSF"
       ]
     }
   ],
@@ -76,29 +86,51 @@
       ]
     }
   ],
-  "education": [
-    {
-      "institution": "Generation Italy",
-      "area": "Web Development",
-      "studyType": "Certification Program",
-      "startDate": "2023-01-01",
-      "endDate": "2023-12-01",
-      "gpa": "",
-      "courses": ["Web Development", "Front-end Frameworks", "UI/UX"]
-    }
-  ],
+  "education": [],
   "awards": [
     {
       "title": "Generation Italy Certification",
-      "date": "2023-12-01",
+      "date": "2022-12-01",
       "awarder": "Generation Italy",
-      "summary": "Completed a full-stack development program with a focus on modern web technologies."
+      "summary": "Java Developer training program completed in late 2022, with an intensive 4-month path that led to hiring in 2023.",
+      "duration": "4 months",
+      "role": "Java Developer Program",
+      "labels": ["Java", "Spring Framework", "MySQL", "Backend Foundations"],
+      "certificateUrl": "/certificates/generation-italy-java-developer.pdf"
     },
     {
       "title": "Python Certification",
+      "date": "2022-10-01",
+      "awarder": "Openjobmetis + Forma.Temp",
+      "summary": "Python Developer course completed in 2022, with a practical 3-month path focused on real coding workflows.",
+      "duration": "3 months",
+      "role": "Python Developer Program",
+      "labels": ["Python", "Django REST Framework", "MySQL", "PostgreSQL", "Docker", "HTML", "JavaScript", "CSS"],
+      "certificateUrl": "/certificates/python-developer-openjobmetis.pdf"
+    },
+    {
+      "title": "Confluent Certification",
       "date": "2024-01-01",
-      "awarder": "Online Course",
-      "summary": "Completed a practical certification in Python programming."
+      "awarder": "Confluent",
+      "summary": "Professional certification issued through Accredible by Confluent.",
+      "duration": "Self-paced",
+      "role": "Streaming & Data Platform",
+      "labels": ["Confluent", "Kafka", "Data Streaming"],
+      "format": "W3C JSON",
+      "previewHost": "certificates.confluent.io",
+      "certificateUrl": "https://certificates.confluent.io/7fd955c5-f480-4de2-8324-515bf2e9cd27#acc.4WIFMPTz"
+    },
+    {
+      "title": "HackerRank Certification",
+      "date": "2024-01-01",
+      "awarder": "HackerRank",
+      "summary": "Technical certification from HackerRank with coding assessment validation.",
+      "duration": "Assessment-based",
+      "role": "Developer Skills Validation",
+      "labels": ["HackerRank", "Coding Test", "Algorithms"],
+      "format": "JPG Certificate",
+      "previewHost": "hackerrank.com",
+      "certificateUrl": "https://www.hackerrank.com/certificates/iframe/45709ebc5dbe"
     }
   ],
   "publications": [],
@@ -123,7 +155,7 @@
     {
       "name": "Design & 3D",
       "level": "Intermediate",
-      "keywords": ["Blender", "UI/UX", "Design Systems"]
+      "keywords": ["Blender", "UI/UX", "Design Systems", "3D Printing", "Robotics", "Raspberry Pi"]
     }
   ],
   "languages": [
@@ -143,7 +175,11 @@
     },
     {
       "name": "Development",
-      "keywords": ["Web", "Interactive Projects", "Creative Code"]
+      "keywords": ["Web", "Interactive Projects", "Creative Code", "AI-assisted Coding", "GitHub Copilot", "Agent Workflows"]
+    },
+    {
+      "name": "Maker",
+      "keywords": ["3D Printing", "Robotics", "Raspberry Pi"]
     }
   ],
   "references": [

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useContext } from "react";
+import React, { useEffect, useRef, useContext, useState } from "react";
 import classNames from "classnames";
 import {
     Vector2,
@@ -70,8 +70,46 @@ const createShapeGeometry = (type, seed) => {
     }
 };
 
+const createRenderer = (canvas) => {
+    if (!canvas) return null;
+
+    try {
+        const context =
+            canvas.getContext("webgl", {
+                antialias: false,
+                alpha: true,
+                depth: true,
+                stencil: false,
+                premultipliedAlpha: true,
+                preserveDrawingBuffer: false,
+            }) ||
+            canvas.getContext("experimental-webgl", {
+                antialias: false,
+                alpha: true,
+                depth: true,
+                stencil: false,
+                premultipliedAlpha: true,
+                preserveDrawingBuffer: false,
+            });
+
+        if (!context) return null;
+
+        return new WebGLRenderer({
+            canvas,
+            context,
+            antialias: false,
+            alpha: true,
+            powerPreference: "low-power",
+            failIfMajorPerformanceCaveat: false,
+        });
+    } catch (error) {
+        return null;
+    }
+};
+
 const DisplacementSphere = (props) => {
     const { theme, shapeType, shapeSeed, themePalette } = useContext(ThemeContext);
+    const [webglEnabled, setWebglEnabled] = useState(true);
     const width = useRef(window.innerWidth);
     const height = useRef(window.innerHeight);
     const start = useRef(Date.now());
@@ -92,10 +130,13 @@ const DisplacementSphere = (props) => {
 
     useEffect(() => {
         mouse.current = new Vector2(0.8, 0.5);
-        renderer.current = new WebGLRenderer({
-            canvas: canvasRef.current,
-            powerPreference: "high-performance",
-        });
+
+        renderer.current = createRenderer(canvasRef.current);
+        if (!renderer.current) {
+            // Graceful fallback: keep app usable if WebGL is unavailable.
+            setWebglEnabled(false);
+            return undefined;
+        }
         renderer.current.setSize(width.current, height.current);
         renderer.current.setPixelRatio(1);
         renderer.current.outputEncoding = sRGBEncoding;
@@ -141,6 +182,8 @@ const DisplacementSphere = (props) => {
     }, []);
 
     useEffect(() => {
+        if (!webglEnabled || !scene.current) return undefined;
+
         const dirLight = new DirectionalLight(
             rgbToThreeColor("250 250 250"),
             0.6
@@ -163,9 +206,13 @@ const DisplacementSphere = (props) => {
         return () => {
             removeLights(lights.current);
         };
-    }, [theme]);
+    }, [theme, webglEnabled]);
 
     useEffect(() => {
+        if (!webglEnabled || !renderer.current || !camera.current || !sphere.current || !canvasRef.current) {
+            return undefined;
+        }
+
         const handleResize = () => {
             const canvasHeight = innerHeight();
             const windowWidth = window.innerWidth;
@@ -198,9 +245,11 @@ const DisplacementSphere = (props) => {
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-    }, [prefersReducedMotion]);
+    }, [prefersReducedMotion, webglEnabled]);
 
     useEffect(() => {
+        if (!webglEnabled || !sphere.current) return undefined;
+
         const onMouseMove = (event) => {
             const { rotation } = sphere.current;
 
@@ -241,9 +290,11 @@ const DisplacementSphere = (props) => {
                 tweenRef.current.stop();
             }
         };
-    }, [isInViewport, prefersReducedMotion]);
+    }, [isInViewport, prefersReducedMotion, webglEnabled]);
 
     useEffect(() => {
+        if (!webglEnabled || !themePalette || !renderer.current || !sphere.current) return undefined;
+
         const themeColor =
             theme === "dark"
                 ? themePalette.secondary?.main || themePalette.primary.main
@@ -290,7 +341,17 @@ const DisplacementSphere = (props) => {
         return () => {
             cancelAnimationFrame(animation);
         };
-    }, [theme, themePalette, shapeType, shapeSeed, isInViewport, prefersReducedMotion]);
+    }, [theme, themePalette, shapeType, shapeSeed, isInViewport, prefersReducedMotion, webglEnabled]);
+
+    if (!webglEnabled) {
+        return (
+            <div
+                aria-hidden
+                className="displacement-sphere-fallback"
+                {...props}
+            />
+        );
+    }
 
     return (
         <Transition appear in onEnter={reflow} timeout={3000}>

@@ -7,6 +7,7 @@ import { ThemeContext } from "./ThemeProvider";
 const useStyles = makeStyles((theme) => ({
   iconButton: {
     position: "fixed",
+    zIndex: 100,
     bottom: theme.spacing(14),
     right: theme.spacing(6),
     height: "2.5rem",
