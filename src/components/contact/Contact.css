@@ -1,0 +1,57 @@
+.contact {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+._form_wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 640px;
+  min-height: 0;
+  padding: 2em;
+  margin: 0 auto;
+}
+
+.submit-btn {
+  width: 100%;
+  border: 0;
+}
+
+.contact_msg {
+  font-size: 3rem;
+  margin: 0;
+  line-height: 1.05;
+  font-family: "Roboto Mono", monospace;
+}
+
+@media (max-width: 1024px) {
+  ._form_wrapper {
+    height: auto;
+    padding: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 5em;
+    flex-direction: column;
+  }
+
+  ._form_wrapper {
+    width: 100%;
+    padding: 2em;
+  }
+
+  .contact {
+    flex-direction: column;
+  }
+}
