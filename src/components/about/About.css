@@ -19,7 +19,7 @@
 
 ._img {
   max-width: 520px;
-  height: 320px;
+  min-height: 320px;
 }
 
 ._content_wrapper {

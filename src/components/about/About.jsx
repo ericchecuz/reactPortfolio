@@ -11,6 +11,8 @@ import pythonCertificateImg from "../../assets/attestato-python_page-0001(1).jpg
 import confluentCertificateImg from "../../assets/confluent-certificate.png";
 import hackerRankCertificateImg from "../../assets/hackerrank.png";
 
+import { InteractivePanel } from "./InteractivePanel";
+
 import './About.css';
 
 
@@ -65,11 +67,14 @@ export const About = () => {
             style={{ 
               background:
                 'radial-gradient(1200px 500px at 30% 20%, var(--accent-soft), transparent 60%), linear-gradient(135deg, rgba(255,255,255,0.06), transparent)',
-              backgroundSize: 'contain',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              overflow: 'hidden',
+              padding: "1.25rem 1.25rem 1.15rem"
             }}
           >
+            <InteractivePanel />
           </div>
           <div className="_content_wrapper ui-surface" style={{ padding: "1.25rem 1.25rem 1.15rem" }}>
             <Typography component='h2' variant="h5">

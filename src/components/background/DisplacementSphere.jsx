@@ -108,7 +108,16 @@ const createRenderer = (canvas) => {
 };
 
 const DisplacementSphere = (props) => {
-    const { theme, shapeType, shapeSeed, themePalette } = useContext(ThemeContext);
+    const {
+        theme,
+        shapeType,
+        shapeSeed,
+        themePalette,
+        wireframe,
+        animationSpeed,
+        isRotating,
+        turbulenceIntensity,
+    } = useContext(ThemeContext);
     const [webglEnabled, setWebglEnabled] = useState(true);
     const width = useRef(window.innerWidth);
     const height = useRef(window.innerHeight);
@@ -159,7 +168,11 @@ const DisplacementSphere = (props) => {
                 UniformsLib["ambient"],
                 UniformsLib["lights"],
                 shader.uniforms,
-                { time: { type: "f", value: 0 } },
+                {
+                    time: { type: "f", value: 0 },
+                    speed: { type: "f", value: animationSpeed },
+                    turbulenceIntensity: { type: "f", value: turbulenceIntensity },
+                },
             ]);
 
             shader.uniforms = uniforms.current;
@@ -305,7 +318,13 @@ const DisplacementSphere = (props) => {
         if (material.current) {
             material.current.color.set(themeColor);
             material.current.emissive.set(themeColor).multiplyScalar(0.08);
+            material.current.wireframe = wireframe;
             material.current.needsUpdate = true;
+        }
+
+        if (uniforms.current) {
+            uniforms.current.speed.value = animationSpeed;
+            uniforms.current.turbulenceIntensity.value = turbulenceIntensity;
         }
 
         if (sphere.current && shapeType && typeof shapeSeed === "number") {
@@ -328,7 +347,9 @@ const DisplacementSphere = (props) => {
                     0.00005 * (Date.now() - start.current);
             }
 
-            sphere.current.rotation.z += 0.001;
+            if (isRotating) {
+                sphere.current.rotation.z += 0.001;
+            }
             renderer.current.render(scene.current, camera.current);
         };
 
@@ -341,7 +362,19 @@ const DisplacementSphere = (props) => {
         return () => {
             cancelAnimationFrame(animation);
         };
-    }, [theme, themePalette, shapeType, shapeSeed, isInViewport, prefersReducedMotion, webglEnabled]);
+    }, [
+        theme,
+        themePalette,
+        shapeType,
+        shapeSeed,
+        isInViewport,
+        prefersReducedMotion,
+        webglEnabled,
+        wireframe,
+        animationSpeed,
+        isRotating,
+        turbulenceIntensity,
+    ]);
 
     if (!webglEnabled) {
         return (

@@ -190,6 +190,8 @@ float turbulence(vec3 p) {
 
 // START
 uniform float time;
+uniform float speed;
+uniform float turbulenceIntensity;
 varying vec2 vUv;
 varying vec3 vNormal;
 varying float noise;
@@ -199,19 +201,16 @@ varying vec3 vViewPosition;
 void main() {
   #include <beginnormal_vertex>
   #include <defaultnormal_vertex>
-  #include <begin_vertex>
-  #include <project_vertex>
-  #ifndef FLAT_SHADED // Normal computed with derivatives when FLAT_SHADED
-    vNormal = normalize(transformedNormal);
-  #endif
 
-  vViewPosition = - mvPosition.xyz;
-
+  vNormal = normalize(normalMatrix * normal);
   vUv = uv;
 
-  noise = turbulence(0.01 * position + normal + time * 0.8);
-  float strength = 8.0;
-  vec3 displacement = normal * noise * strength;
-  gl_Position = projectionMatrix * modelViewMatrix * vec4(position + displacement, 1.0);
+  noise = turbulence(0.01 * position + normal + (time * speed) * 0.8);
+  float b = 5.0 * pnoise(0.05 * position + vec3(2.0 * (time * speed)), vec3(100.0));
+  float displacement = ( - 10. * noise + b ) * turbulenceIntensity;
+
+  vec3 newPosition = position + normal * displacement;
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
+  vViewPosition = - (modelViewMatrix * vec4(newPosition, 1.0)).xyz;
 }
 `;
