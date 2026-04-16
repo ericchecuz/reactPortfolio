@@ -11,6 +11,8 @@ import pythonCertificateImg from "../../assets/attestato-python_page-0001(1).jpg
 import confluentCertificateImg from "../../assets/confluent-certificate.png";
 import hackerRankCertificateImg from "../../assets/hackerrank.png";
 
+import { InteractivePanel } from "./InteractivePanel";
+
 import './About.css';
 
 
@@ -65,11 +67,14 @@ export const About = () => {
             style={{ 
               background:
                 'radial-gradient(1200px 500px at 30% 20%, var(--accent-soft), transparent 60%), linear-gradient(135deg, rgba(255,255,255,0.06), transparent)',
-              backgroundSize: 'contain',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              overflow: 'hidden',
+              padding: "1.25rem 1.25rem 1.15rem"
             }}
           >
+            <InteractivePanel />
           </div>
           <div className="_content_wrapper ui-surface" style={{ padding: "1.25rem 1.25rem 1.15rem" }}>
             <Typography component='h2' variant="h5">
@@ -129,30 +134,33 @@ export const About = () => {
 
           {mainCertifications.map((award, index) => (
             <div key={index} className="award-card ui-surface">
-              <i className="fas fa-award edu-card__badge" aria-hidden />
-              <div className="edu-header">
-                <Typography variant="h6">{award.title}</Typography>
-                <Typography variant="caption" className="award-caption">
-                  {new Date(award.date).getFullYear()} - {award.awarder}
-                </Typography>
-              </div>
-              <Typography variant="body2" className="award-role">
-                {award.role} {award.duration ? `• ${award.duration}` : ""}
-              </Typography>
-              <Typography variant="body2" style={{ marginTop: '0.5em' }}>
-                {award.summary}
-              </Typography>
-              <div className="award-pdf-preview-wrap">
-                <div className="award-pdf-preview">
-                  <img
-                    src={getAwardImagePreview(award.title)}
-                    alt={`${award.title} preview`}
-                    className="award-preview-image"
-                  />
+              <div className="award-content">
+                <i className="fas fa-award edu-card__badge" aria-hidden />
+                <div className="edu-header">
+                  <Typography variant="h6">{award.title}</Typography>
+                  <Typography variant="caption" className="award-caption">
+                    {new Date(award.date).getFullYear()} - {award.awarder}
+                  </Typography>
                 </div>
-              </div>
-              <div className="chip-row">
-                {(award.labels || []).map((label, i) => (
+                <Typography variant="body2" className="award-role">
+                  {award.role} {award.duration ? `• ${award.duration}` : ""}
+                </Typography>
+                <div className="summary-preview-row">
+                  <Typography variant="body2" style={{ marginTop: '0.5em' }}>
+                    {award.summary}
+                  </Typography>
+                  <div className="award-pdf-preview-wrap">
+                    <div className="award-pdf-preview">
+                      <img
+                        src={getAwardImagePreview(award.title)}
+                        alt={`${award.title} preview`}
+                        className="award-preview-image"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="chip-row">
+                  {(award.labels || []).map((label, i) => (
                   <span key={`${award.title}-${i}`} className="ui-pill">
                     {label}
                   </span>
@@ -169,6 +177,8 @@ export const About = () => {
                   <span>Open certificate</span>
                 </a>
               )}
+              </div>
+             
             </div>
           ))}
 

@@ -66,6 +66,10 @@ export const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState(getInitialMode());
     const [shapeType, setShapeType] = useState(getInitialShape());
     const [shapeSeed, setShapeSeed] = useState(Math.random());
+    const [wireframe, setWireframe] = useState(false);
+    const [animationSpeed, setAnimationSpeed] = useState(1); // 0.5, 1, 2
+    const [isRotating, setIsRotating] = useState(true);
+    const [turbulenceIntensity, setTurbulenceIntensity] = useState(1); // 1 to 3
 
     const toggleTheme = () => {
         setTheme((currentTheme) => {
@@ -81,6 +85,22 @@ export const ThemeProvider = ({ children }) => {
             return nextShapes[Math.floor(Math.random() * nextShapes.length)];
         });
         setShapeSeed(Math.random());
+    };
+
+    const toggleWireframe = () => setWireframe((prev) => !prev);
+    
+    const cycleAnimationSpeed = () => {
+        setAnimationSpeed((prev) => {
+            if (prev === 0.5) return 1;
+            if (prev === 1) return 2;
+            return 0.5;
+        });
+    };
+
+    const toggleRotation = () => setIsRotating((prev) => !prev);
+
+    const toggleTurbulence = () => {
+        setTurbulenceIntensity((prev) => (prev >= 3 ? 1 : prev + 1));
     };
 
     useEffect(() => {
@@ -140,6 +160,14 @@ export const ThemeProvider = ({ children }) => {
                 shapeSeed,
                 toggleShape,
                 themePalette: selectedTheme.palette,
+                wireframe,
+                toggleWireframe,
+                animationSpeed,
+                cycleAnimationSpeed,
+                isRotating,
+                toggleRotation,
+                turbulenceIntensity,
+                toggleTurbulence,
             }}
         >
             <MuiThemeProvider theme={selectedTheme}>
