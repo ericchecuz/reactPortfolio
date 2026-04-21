@@ -33,7 +33,7 @@ export const ThemeProvider = ({ children }) => {
             return JSON.parse(legacyDark) ? "dark" : "light";
         }
 
-        return getPrefColorScheme() ? "dark" : "light";
+        return "dark"; // Default to dark as requested
     };
 
     const getPrefColorScheme = () => {
@@ -53,20 +53,20 @@ export const ThemeProvider = ({ children }) => {
     ];
 
     const getInitialShape = () => {
-        if (typeof localStorage === "undefined") return shapeOptions[0];
+        if (typeof localStorage === "undefined") return "torusKnot";
 
         const savedShape = localStorage.getItem("shapeType");
         if (savedShape && shapeOptions.includes(savedShape)) {
             return savedShape;
         }
 
-        return shapeOptions[Math.floor(Math.random() * shapeOptions.length)];
+        return "torusKnot"; // Default to torusKnot as requested
     };
 
     const [theme, setTheme] = useState(getInitialMode());
     const [shapeType, setShapeType] = useState(getInitialShape());
     const [shapeSeed, setShapeSeed] = useState(Math.random());
-    const [wireframe, setWireframe] = useState(false);
+    const [wireframe, setWireframe] = useState(true); // Default to true as requested
     const [animationSpeed, setAnimationSpeed] = useState(1); // 0.5, 1, 2
     const [isRotating, setIsRotating] = useState(true);
     const [turbulenceIntensity, setTurbulenceIntensity] = useState(1); // 1 to 3
