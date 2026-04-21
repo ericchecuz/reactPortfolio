@@ -8,13 +8,31 @@ const useStyles = makeStyles((theme) => ({
   svg: {
     position: "fixed",
     zIndex: 100,
-    width: "50px",
-    height: "50px",
-    top: theme.spacing(6),
-    left: theme.spacing(6),
-    boxShadow:
-      "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
-    borderRadius: "50%",
+    width: "65px", // Slightly larger for better visibility
+    height: "65px",
+    top: theme.spacing(4), // Closer to the edge for a modern look
+    left: theme.spacing(4),
+    backgroundColor: "rgba(255, 255, 255, 0.05)", // Glassmorphism base
+    backdropFilter: "blur(12px)", // Frosted glass effect
+    WebkitBackdropFilter: "blur(12px)",
+    border: "1px solid rgba(255, 255, 255, 0.15)", // Subtle border for glass look
+    borderRadius: "12px", // Slightly softer radius
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "6px", // Small padding to keep logo from touching edges
+    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)", // Lighter shadow
+    transition: "transform 0.2s ease, background-color 0.2s ease", // Minimal transition
+    "&:hover": {
+      transform: "translateY(-2px)", // Simple lift instead of scale
+      backgroundColor: "rgba(255, 255, 255, 0.12)",
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "50px",
+      height: "50px",
+      top: theme.spacing(3),
+      left: theme.spacing(3),
+    },
   },
 }));
 

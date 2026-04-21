@@ -152,7 +152,7 @@ export const InteractivePanel = () => {
 
       <div className={classes.controls}>
         <div className={classes.controlItem}>
-          <Tooltip title="Cambia Tema" placement="top" TransitionComponent={Zoom}>
+          <Tooltip title="Change Theme" placement="top" TransitionComponent={Zoom}>
             <IconButton onClick={toggleTheme} className={classes.button}>
               {theme === "light" ? <Brightness4 fontSize="small" /> : theme === "dark" ? <Brightness7 fontSize="small" /> : <Palette fontSize="small" />}
             </IconButton>
@@ -161,7 +161,7 @@ export const InteractivePanel = () => {
         </div>
 
         <div className={classes.controlItem}>
-          <Tooltip title="Cambia Forma" placement="top" TransitionComponent={Zoom}>
+          <Tooltip title="Change Shape" placement="top" TransitionComponent={Zoom}>
             <IconButton onClick={toggleShape} className={classes.button}>
               <Shuffle fontSize="small" />
             </IconButton>
@@ -179,7 +179,7 @@ export const InteractivePanel = () => {
         </div>
 
         <div className={classes.controlItem}>
-          <Tooltip title="Velocità Animazione" placement="top" TransitionComponent={Zoom}>
+          <Tooltip title="Animation Speed" placement="top" TransitionComponent={Zoom}>
             <IconButton onClick={cycleAnimationSpeed} className={classes.button}>
               {animationSpeed === 0.5 ? <SlowMotionVideo fontSize="small" /> : animationSpeed === 1 ? <PlayArrow fontSize="small" /> : <FastForward fontSize="small" />}
             </IconButton>
@@ -188,7 +188,7 @@ export const InteractivePanel = () => {
         </div>
 
         <div className={classes.controlItem}>
-          <Tooltip title="Rotazione" placement="top" TransitionComponent={Zoom}>
+          <Tooltip title="Rotation Toggle" placement="top" TransitionComponent={Zoom}>
             <IconButton onClick={toggleRotation} className={isRotating ? classes.buttonActive : classes.button}>
               {isRotating ? <RotateRight fontSize="small" /> : <RotateLeft fontSize="small" />}
             </IconButton>
