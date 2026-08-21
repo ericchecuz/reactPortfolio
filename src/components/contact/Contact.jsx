@@ -7,8 +7,6 @@ import { TextDecrypt } from "../content/TextDecrypt";
 import Resume from '../../settings/resume.json';
 import Swal from 'sweetalert2';
 
-import emailjs from '@emailjs/browser';
-
 import './Contact.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -38,20 +36,28 @@ export const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_8bezxog', 'template_jmsk313', form.current, 'knwNTK4YU4K30HYMd')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+    const formData = new FormData(e.target);
+    const name = formData.get('name');
+    const message = formData.get('message');
+    
+    // Create the mailto link
+    const subject = encodeURIComponent(`Message from ${name} - Portfolio`);
+    const body = encodeURIComponent(`Hi Eric,\n\nI'm reaching out through your portfolio.\n\nMy Name: ${name}\n\nMessage:\n${message}\n\nBest regards.`);
+    const mailtoLink = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+    
+    // Open the mail client
+    window.location.href = mailtoLink;
+
     Swal.fire({
       position: 'center',
       icon: 'success',
-      title: 'You have sent an email!',
+      title: 'Opening your email client...',
+      text: 'Please send the pre-filled email in the window that just opened.',
       showConfirmButton: false,
-      timer: 1500
-    })
-    e.target.reset()
+      timer: 3000
+    });
+
+    e.target.reset();
   };
 
 
@@ -74,19 +80,11 @@ export const Contact = () => {
                   size="small"
                   variant="filled"
                   name="name"
+                  required
                   className={classes.formfield}
                 />
                 <TextField
-                  id="outlined-password-input"
-                  label="Email"
-                  type="email"
-                  size="small"
-                  variant="filled"
-                  name="email"
-                  className={classes.formfield}
-                />
-                <TextField
-                  id="outlined-password-input"
+                  id="outlined-message-input"
                   label="Message"
                   type="textarea"
                   size="small"
@@ -94,6 +92,7 @@ export const Contact = () => {
                   minRows={5}
                   variant="filled"
                   name="message"
+                  required
                   className={classes.formfield}
                 />
                 <button type="submit" value="Send" className="submit-btn ui-button ui-button--primary">
