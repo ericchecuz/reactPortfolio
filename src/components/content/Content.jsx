@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     marginLeft: theme.spacing(50),
     "@media (max-width: 768px)": {
-      marginLeft: theme.spacing(10),
+      marginLeft: 0,
     },
   },
   jobs: {
@@ -111,7 +111,7 @@ export const Content = () => {
             <i className={`fas fa-layer-group ${classes.experienceIcon}`} />
             <div className={classes.experienceMeta}>
               <span className={classes.experienceLabel}>PRO EXPERIENCE</span>
-              <span className={classes.experienceValue}>3+ YEARS - BANKING & UI/UX</span>
+              <span className={classes.experienceValue}>4+ YEARS - BANKING & UI/UX</span>
             </div>
           </div>
           <span className={classes.currentRoleChip}>
