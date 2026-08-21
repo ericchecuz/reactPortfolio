@@ -148,20 +148,25 @@
 }
 @media (max-width: 768px) {
   .project {
-    margin: 0;
+    margin: 0 0 1rem;
     flex-direction: column;
-    gap: 1.25rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    overflow: hidden;
   }
   .__img_wrapper {
-    width: 100%;
+    display: none;
   }
   .__content_wrapper {
     width: 100%;
     min-height: 0;
+    border: none;
+    border-radius: 0;
   }
 
   .works-hero {
-    min-height: 240px;
+    display: none;
   }
 
   .works-site-preview {

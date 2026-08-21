@@ -8,6 +8,12 @@ nav {
   left: -6.5rem;
 }
 
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+}
+
 nav a {
   margin-right: 20px;
   text-decoration: none;
