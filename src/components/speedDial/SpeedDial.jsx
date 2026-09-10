@@ -27,7 +27,26 @@ export const SpeedDials = () => {
       setOpen(true);
     };
 
-    const actionIcons = Resume.basics.profiles.map((action) => (
+    const navItems = [
+        { name: 'Home', icon: 'fas fa-home', href: '#' },
+        { name: 'About', icon: 'fas fa-user', href: '#about' },
+        { name: 'Projects', icon: 'fas fa-briefcase', href: '#works' },
+        { name: 'Contact', icon: 'fas fa-envelope', href: '#contact' },
+    ];
+
+    const navIcons = navItems.map((item) => (
+        <SpeedDialAction
+            key={item.name}
+            icon={<i className={`${item.icon} ${classes.iconColor}`}></i>}
+            tooltipTitle={item.name}
+            onClick={handleClose}
+            href={item.href}
+            underline="none"
+            color="inherit"
+        />
+    ));
+
+    const socialIcons = Resume.basics.profiles.map((action) => (
       <SpeedDialAction
         key={action.network.toLowerCase()}
         icon={<i className={`${action.x_icon} ${classes.iconColor}`}></i>}
@@ -53,7 +72,8 @@ export const SpeedDials = () => {
           open={open}
           direction="down"
         >
-          {actionIcons}
+          {navIcons}
+          {socialIcons}
         </SpeedDial>
       </>
     );
