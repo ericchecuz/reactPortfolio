@@ -12,12 +12,11 @@ const useStyles = makeStyles((theme) => ({
     padding: "0px", // No padding in wrapper
   },
   img: {
-    width: "100%", // Full width
-    height: "100%", // Full height
+    width: "100%",
+    height: "100%",
     objectFit: "contain",
-    borderRadius: "10px", // Matches the 12px container radius nicely
+    borderRadius: "8px",
     transition: "transform 0.2s ease-in-out",
-    scale: "2",
   },
 }));
 

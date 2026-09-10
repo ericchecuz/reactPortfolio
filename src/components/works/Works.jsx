@@ -59,6 +59,7 @@ export const Works = () => {
                   src={project.website}
                   loading="lazy"
                   className="works-site-preview"
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
                 />
                 <a
                   href={project.website}

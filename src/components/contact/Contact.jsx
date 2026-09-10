@@ -37,10 +37,11 @@ export const Contact = () => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const message = formData.get('message');
-    
-    // Create the mailto link
+    const rawName = formData.get('name') ?? '';
+    const rawMessage = formData.get('message') ?? '';
+    const name = rawName.replace(/[\r\n]/g, ' ').trim();
+    const message = rawMessage.replace(/[\r\n]/g, '\n').trim();
+
     const subject = encodeURIComponent(`Message from ${name} - Portfolio`);
     const body = encodeURIComponent(`Hi Eric,\n\nI'm reaching out through your portfolio.\n\nMy Name: ${name}\n\nMessage:\n${message}\n\nBest regards.`);
     const mailtoLink = `mailto:${contactEmail}?subject=${subject}&body=${body}`;

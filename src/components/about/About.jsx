@@ -32,8 +32,8 @@ export const About = () => {
   const classes = useStyles();
   const greetings = "Hello there!";
   const aboutme = `I'm ${Resume.basics.name}, a ${Resume.basics.label}. ${Resume.basics.description}`;
-  const mainCertifications = Resume.awards.filter((award) => !award.certificateUrl?.startsWith("http"));
-  const externalCertifications = Resume.awards.filter((award) => award.certificateUrl?.startsWith("http"));
+  const mainCertifications = Resume.awards.filter((award) => !award.certificateUrl?.startsWith("https://"));
+  const externalCertifications = Resume.awards.filter((award) => award.certificateUrl?.startsWith("https://"));
   const primaryExperience = Resume.work?.[0];
   const getAwardPdfPreview = (title) => {
     const id = title.toLowerCase();
@@ -62,20 +62,6 @@ export const About = () => {
     <section id="about">
       <Container component="main" className={classes.main} maxWidth="md">
         <div className="about">
-          <div
-            className="_img ui-surface"
-            style={{ 
-              background:
-                'radial-gradient(1200px 500px at 30% 20%, var(--accent-soft), transparent 60%), linear-gradient(135deg, rgba(255,255,255,0.06), transparent)',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              overflow: 'hidden',
-              padding: "1.25rem 1.25rem 1.15rem"
-            }}
-          >
-            <InteractivePanel />
-          </div>
           <div className="_content_wrapper ui-surface" style={{ padding: "1.25rem 1.25rem 1.15rem" }}>
             <Typography component='h2' variant="h5">
               <TextDecrypt text={`${greetings}`} />
@@ -87,6 +73,20 @@ export const About = () => {
               <i className="fas fa-terminal" />
               <span>Send me a message</span>
             </a>
+          </div>
+          <div
+            className="_img ui-surface"
+            style={{
+              background:
+                'radial-gradient(1200px 500px at 30% 20%, var(--accent-soft), transparent 60%), linear-gradient(135deg, rgba(255,255,255,0.06), transparent)',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              overflow: 'hidden',
+              padding: "1.25rem 1.25rem 1.15rem"
+            }}
+          >
+            <InteractivePanel />
           </div>
         </div>
 
@@ -121,6 +121,14 @@ export const About = () => {
                 <span className="now-building__item">
                   <i className="fas fa-microchip" />
                   Raspberry Pi projects for automation and maker workflows
+                </span>
+                <span className="now-building__item">
+                  <i className="fas fa-film" />
+                  Blender — 3D modeling, animation and procedural shading
+                </span>
+                <span className="now-building__item">
+                  <i className="fas fa-wave-square" />
+                  TouchDesigner — real-time generative visuals and interactive installations
                 </span>
               </div>
             </div>
