@@ -8,6 +8,7 @@ import generationDiplomaPdf from "../../assets/diploma-generation-1.pdf";
 import pythonCertificatePdf from "../../assets/attestato-python.pdf";
 import generationDiplomaImg from "../../assets/diploma-generation_page-0001.jpg";
 import pythonCertificateImg from "../../assets/attestato-python_page-0001(1).jpg";
+import kubernetesCertificateImg from "../../assets/attestato-kubernetes.jpg";
 import confluentCertificateImg from "../../assets/confluent-certificate.png";
 import hackerRankCertificateImg from "../../assets/hackerrank.png";
 
@@ -39,6 +40,7 @@ export const About = () => {
     const id = title.toLowerCase();
     if (id.includes("generation")) return generationDiplomaPdf;
     if (id.includes("python")) return pythonCertificatePdf;
+    if (id.includes("kubernetes")) return kubernetesCertificateImg;
     return "";
   };
   const getAwardPdfLink = (award) => {
@@ -49,6 +51,7 @@ export const About = () => {
     const id = title.toLowerCase();
     if (id.includes("generation")) return generationDiplomaImg;
     if (id.includes("python")) return pythonCertificateImg;
+    if (id.includes("kubernetes")) return kubernetesCertificateImg;
     return "";
   };
   const getExternalPreviewImage = (title) => {
@@ -181,7 +184,7 @@ export const About = () => {
                   rel="noopener noreferrer"
                   className="ui-button ui-button--outline cert-link-btn"
                 >
-                  <i className="fas fa-file-pdf" />
+                  <i className={getAwardPdfLink(award).endsWith(".pdf") ? "fas fa-file-pdf" : "fas fa-file-image"} />
                   <span>Open certificate</span>
                 </a>
               )}

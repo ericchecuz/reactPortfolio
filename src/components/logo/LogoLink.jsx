@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, Tooltip, Zoom } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Resume from "../../settings/resume.json";
 import { Logo } from "./Logo";
 
 const useStyles = makeStyles((theme) => ({
@@ -41,19 +40,26 @@ const useStyles = makeStyles((theme) => ({
 export const LogoLink = () => {
   const classes = useStyles();
 
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <Tooltip
-      title={Resume.basics.name}
+      title="Back to home"
       placement="right"
       TransitionComponent={Zoom}
     >
       <Link
           variant="h6"
-          href={Resume.basics.url}
+          href="#"
+          onClick={handleLogoClick}
           underline="none"
           color="inherit"
           noWrap
           className={classes.svg}
+          style={{ cursor: "pointer" }}
       >
         <Logo />
       </Link>
