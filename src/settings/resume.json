@@ -109,6 +109,16 @@
       "certificateUrl": "/certificates/python-developer-openjobmetis.pdf"
     },
     {
+      "title": "Kubernetes CKAD Certification",
+      "date": "2026-05-14",
+      "awarder": "Digital Lab",
+      "summary": "KUB202-Kubernetes-CKAD course completed in 2026, focused on deploying, configuring and managing containerized applications on Kubernetes.",
+      "duration": "Course-based",
+      "role": "Kubernetes Application Developer Program",
+      "labels": ["Kubernetes", "CKAD", "Docker", "Containers", "Cloud Native"],
+      "certificateUrl": "/certificates/kubernetes-ckad-digital-lab.jpg"
+    },
+    {
       "title": "Confluent Certification",
       "date": "2024-01-01",
       "awarder": "Confluent",
