@@ -39,6 +39,8 @@ export const Works = () => {
       Built to highlight the rustic charm and hospitality of the farm stay experience.`,
       website: 'https://agriturismodasimone.it',
       tech: ['React', 'Firebase', 'Material-UI'],
+      // Host CSP (frame-ancestors) allows only Hostinger domains, so the iframe is refused
+      embeddable: false,
     },
   ];
 
@@ -54,13 +56,23 @@ export const Works = () => {
           <div className="project" key={ project.id }>
             <div className="__img_wrapper">
               <div className="works-hero ui-surface">
-                <iframe
-                  title={`${project.title} preview`}
-                  src={project.website}
-                  loading="lazy"
-                  className="works-site-preview"
-                  sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-                />
+                {project.embeddable === false ? (
+                  <div className="works-preview-fallback">
+                    <i className="fas fa-leaf works-preview-fallback__icon" aria-hidden />
+                    <span className="works-preview-fallback__title">{project.title}</span>
+                    <span className="works-preview-fallback__note">
+                      Live preview blocked by the host — open the site to explore it
+                    </span>
+                  </div>
+                ) : (
+                  <iframe
+                    title={`${project.title} preview`}
+                    src={project.website}
+                    loading="lazy"
+                    className="works-site-preview"
+                    sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                  />
+                )}
                 <a
                   href={project.website}
                   target="_blank"

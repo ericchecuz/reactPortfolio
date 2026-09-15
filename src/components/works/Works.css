@@ -99,6 +99,40 @@
   background: var(--bg-paper);
 }
 
+.works-preview-fallback {
+  width: 100%;
+  height: 190px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  background: radial-gradient(700px 260px at 50% 0%, var(--primary-soft), transparent 60%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 1rem;
+  font-family: "Roboto Mono", monospace;
+}
+
+.works-preview-fallback__icon {
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.works-preview-fallback__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.works-preview-fallback__note {
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  max-width: 260px;
+}
+
 .works-hero__title {
   font-size: 1.2rem;
   font-weight: 700;
