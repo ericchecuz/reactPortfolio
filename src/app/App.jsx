@@ -8,7 +8,9 @@ import { logCredits } from "../utils/logCredits";
 
 import { Home } from "../pages/Home";
 
-const PageNotFound = lazy(() => import("../pages/PageNotFound"));
+const PageNotFound = lazy(() =>
+    import("../pages/PageNotFound").then((m) => ({ default: m.PageNotFound }))
+);
 
 export const App = () => {
     logCredits();
