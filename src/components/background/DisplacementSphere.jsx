@@ -240,15 +240,22 @@ const DisplacementSphere = (props) => {
                 renderer.current.render(scene.current, camera.current);
             }
 
-            if (windowWidth <= media.mobile) {
+            if (windowWidth <= media.mobileS) {
+                sphere.current.position.x = 10;
+                sphere.current.position.y = 8;
+                sphere.current.scale.setScalar(0.55);
+            } else if (windowWidth <= media.mobile) {
                 sphere.current.position.x = 14;
                 sphere.current.position.y = 10;
+                sphere.current.scale.setScalar(0.68);
             } else if (windowWidth <= media.tablet) {
                 sphere.current.position.x = 18;
                 sphere.current.position.y = 14;
+                sphere.current.scale.setScalar(0.85);
             } else {
                 sphere.current.position.x = 22;
                 sphere.current.position.y = 16;
+                sphere.current.scale.setScalar(1);
             }
         };
 

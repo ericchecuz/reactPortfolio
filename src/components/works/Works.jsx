@@ -42,6 +42,16 @@ export const Works = () => {
       // Host CSP (frame-ancestors) allows only Hostinger domains, so the iframe is refused
       embeddable: false,
     },
+    {
+      id: 3,
+      title: 'NomadRoadie',
+      description: `UI/UX design system for an Android app connecting solo travelers nearby.
+      Full artboard set — onboarding, auth, activity feed and a custom mascot — built with a
+      warm Material 3 palette, ready to implement in Jetpack Compose.`,
+      website: process.env.PUBLIC_URL + '/nomad-roadie/index.html',
+      tech: ['UI/UX Design', 'Design System', 'Jetpack Compose'],
+      note: 'Click to explore',
+    },
   ];
 
   return (
@@ -69,7 +79,7 @@ export const Works = () => {
                     title={`${project.title} preview`}
                     src={project.website}
                     loading="lazy"
-                    className="works-site-preview"
+                    className={`works-site-preview${project.tall ? ' works-site-preview--tall' : ''}`}
                     sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
                   />
                 )}
@@ -79,7 +89,7 @@ export const Works = () => {
                   rel="noopener noreferrer"
                   className="works-hero__url"
                 >
-                  {project.website}
+                  {project.note || project.website}
                 </a>
               </div>
             </div>
@@ -108,7 +118,7 @@ export const Works = () => {
                   className="ui-button ui-button--outline"
                 >
                   <i className="fas fa-external-link-alt" />
-                  <span>Visit website</span>
+                  <span>{project.note ? 'Open full mockup' : 'Visit website'}</span>
                 </a>
               </div>
             </div>
