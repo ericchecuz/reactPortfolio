@@ -3,7 +3,7 @@ import classNames from "classnames";
 import {
     Vector2,
     Color,
-    sRGBEncoding,
+    SRGBColorSpace,
     WebGLRenderer,
     PerspectiveCamera,
     Scene,
@@ -12,13 +12,13 @@ import {
     UniformsUtils,
     UniformsLib,
     MeshPhongMaterial,
-    IcosahedronBufferGeometry,
-    SphereBufferGeometry,
-    TorusKnotBufferGeometry,
-    BoxBufferGeometry,
-    CylinderBufferGeometry,
-    DodecahedronBufferGeometry,
-    TetrahedronBufferGeometry,
+    IcosahedronGeometry,
+    SphereGeometry,
+    TorusKnotGeometry,
+    BoxGeometry,
+    CylinderGeometry,
+    DodecahedronGeometry,
+    TetrahedronGeometry,
     Mesh,
 } from "three";
 import { spring, value } from "popmotion";
@@ -41,9 +41,9 @@ const createShapeGeometry = (type, seed) => {
 
     switch (type) {
         case "sphere":
-            return new SphereBufferGeometry(radius, 128, 128);
+            return new SphereGeometry(radius, 128, 128);
         case "torusKnot":
-            return new TorusKnotBufferGeometry(
+            return new TorusKnotGeometry(
                 radius * 0.65,
                 radius * 0.2,
                 128,
@@ -52,21 +52,21 @@ const createShapeGeometry = (type, seed) => {
                 2 + detail
             );
         case "box":
-            return new BoxBufferGeometry(radius, radius, radius);
+            return new BoxGeometry(radius, radius, radius);
         case "cylinder":
-            return new CylinderBufferGeometry(
+            return new CylinderGeometry(
                 radius * 0.7,
                 radius * 0.7,
                 radius * 1.4,
                 64
             );
         case "dodecahedron":
-            return new DodecahedronBufferGeometry(radius, detail);
+            return new DodecahedronGeometry(radius, detail);
         case "tetrahedron":
-            return new TetrahedronBufferGeometry(radius, detail);
+            return new TetrahedronGeometry(radius, detail);
         case "icosahedron":
         default:
-            return new IcosahedronBufferGeometry(radius, 3 + detail);
+            return new IcosahedronGeometry(radius, 3 + detail);
     }
 };
 
@@ -148,7 +148,7 @@ const DisplacementSphere = (props) => {
         }
         renderer.current.setSize(width.current, height.current);
         renderer.current.setPixelRatio(1);
-        renderer.current.outputEncoding = sRGBEncoding;
+        renderer.current.outputColorSpace = SRGBColorSpace;
 
         camera.current = new PerspectiveCamera(
             55,
@@ -181,7 +181,7 @@ const DisplacementSphere = (props) => {
             shader.lights = true;
         };
 
-        geometry.current = new IcosahedronBufferGeometry(30, 4);
+        geometry.current = new IcosahedronGeometry(30, 4);
 
         sphere.current = new Mesh(geometry.current, material.current);
         sphere.current.position.z = 0;
