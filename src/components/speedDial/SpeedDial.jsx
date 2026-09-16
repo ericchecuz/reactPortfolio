@@ -46,7 +46,9 @@ export const SpeedDials = () => {
         />
     ));
 
-    const socialIcons = Resume.basics.profiles.map((action) => (
+    const socialIcons = Resume.basics.profiles
+      .filter((action) => action.network.toLowerCase() !== "email")
+      .map((action) => (
       <SpeedDialAction
         key={action.network.toLowerCase()}
         icon={<i className={`${action.x_icon} ${classes.iconColor}`}></i>}
