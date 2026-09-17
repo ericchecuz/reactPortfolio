@@ -36,12 +36,6 @@ export const ThemeProvider = ({ children }) => {
         return "dark"; // Default to dark as requested
     };
 
-    const getPrefColorScheme = () => {
-        if (!window.matchMedia) return false;
-
-        return window.matchMedia("(prefers-color-scheme: dark)").matches;
-    };
-
     const shapeOptions = [
         "icosahedron",
         "sphere",

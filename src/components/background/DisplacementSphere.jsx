@@ -192,6 +192,8 @@ const DisplacementSphere = (props) => {
             cleanScene(scene.current);
             cleanRenderer(renderer.current);
         };
+        // Initial uniform values only; later changes are applied by the effect below.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
